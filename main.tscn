@@ -1,3 +1,31 @@
-[gd_scene format=3 uid="uid://brs3xpi7hi383"]
+[gd_scene load_steps=6 format=3 uid="uid://brs3xpi7hi383"]
+
+[ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://testing/sandbox/map-testing.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://buq0yhp21p2i" path="res://testing/DebugFlyCamera.tscn" id="2_0xm2m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_h2yge"]
+sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+
+[sub_resource type="Environment" id="Environment_1bvp3"]
+background_mode = 2
+sky = SubResource("Sky_h2yge")
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1bvp3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="DebugFlyCamera" parent="." instance=ExtResource("2_0xm2m")]
+
+[node name="Map-testing" parent="." instance=ExtResource("1_ig7tw")]
