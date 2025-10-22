@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://del4em7ehgna4"]
+
+[ext_resource type="Script" uid="uid://jmsspt1kqsuq" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="1_yt1jo"]
+
+[node name="Map-testing" type="Node3D"]
+
+[node name="DungeonGenerator3D" type="Node3D" parent="."]
+script = ExtResource("1_yt1jo")
+dungeon_size = Vector3i(10, 3, 10)
+max_retries = 2
+metadata/_custom_type_script = "uid://jmsspt1kqsuq"
