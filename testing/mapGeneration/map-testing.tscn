@@ -1,0 +1,125 @@
+[gd_scene load_steps=5 format=3 uid="uid://del4em7ehgna4"]
+
+[ext_resource type="Script" uid="uid://jmsspt1kqsuq" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="1_yt1jo"]
+[ext_resource type="PackedScene" uid="uid://cn02hrwpikkip" path="res://testing/mapGeneration/rooms/roomOne.tscn" id="2_cw4ka"]
+[ext_resource type="PackedScene" uid="uid://2siqowmiasac" path="res://testing/mapGeneration/rooms/corridor.tscn" id="3_myk2o"]
+[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="4_cqat8"]
+
+[node name="Map-testing" type="Node3D"]
+
+[node name="DungeonGenerator3D" type="Node3D" parent="."]
+script = ExtResource("1_yt1jo")
+room_scenes = Array[PackedScene]([ExtResource("2_cw4ka")])
+corridor_room_scene = ExtResource("3_myk2o")
+dungeon_size = Vector3i(10, 1, 10)
+max_retries = 2
+metadata/_custom_type_script = "uid://jmsspt1kqsuq"
+
+[node name="RoomsContainer" type="Node3D" parent="DungeonGenerator3D"]
+
+[node name="RoomOne_0" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
+script = ExtResource("4_cqat8")
+size_in_voxels = Vector3i(3, 1, 5)
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="RoomOne_1" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -15, 0, -35)
+script = ExtResource("4_cqat8")
+size_in_voxels = Vector3i(3, 1, 5)
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_2" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -35)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_3" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -35)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_4" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -35)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_5" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 25)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_6" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 25)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_7" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 25)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_8" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_9" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_10" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -5)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_11" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_12" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -25)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_13" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, -35)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_14" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, -25)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_15" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, -15)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_16" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -15)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_17" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -15)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_18" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_19" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Corridor_20" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -15)
+script = ExtResource("4_cqat8")
+metadata/_custom_type_script = "uid://c02cpa7oirtca"

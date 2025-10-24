@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://brs3xpi7hi383"]
 
-[ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://testing/sandbox/map-testing.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://testing/mapGeneration/map-testing.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://buq0yhp21p2i" path="res://testing/DebugFlyCamera.tscn" id="2_0xm2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
