@@ -35,4 +35,4 @@ operation = 2
 size = Vector3(2, 4, 1)
 
 [node name="room-onestore" parent="." instance=ExtResource("3_y6yac")]
-transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, -55, -5, 0)
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, 0, 0)

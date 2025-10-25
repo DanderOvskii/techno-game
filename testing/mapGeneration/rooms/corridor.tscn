@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://2siqowmiasac"]
+[gd_scene load_steps=9 format=3 uid="uid://2siqowmiasac"]
 
-[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ycskp"]
+[ext_resource type="Script" uid="uid://c18dc0obh7a3j" path="res://testing/mapGeneration/rooms/corridor.gd" id="1_jyojm"]
+[ext_resource type="PackedScene" uid="uid://33s65hpx6fj8" path="res://testing/mapGeneration/rooms/halway-replacments/halway-strait.tscn" id="2_ii5tw"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_jyojm"]
 [ext_resource type="PackedScene" uid="uid://cvqrdfqbmidlo" path="res://assets/models/environment/maptiles/corridor.glb" id="3_ii5tw"]
+[ext_resource type="PackedScene" uid="uid://f7gmfod08p25" path="res://testing/mapGeneration/rooms/halway-replacments/halway-corner.tscn" id="3_rs85m"]
+[ext_resource type="PackedScene" uid="uid://b4ejef3s2kf3n" path="res://testing/mapGeneration/rooms/halway-replacments/halway-T.tscn" id="4_8fkn4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs85m"]
 albedo_texture = ExtResource("2_jyojm")
@@ -22,7 +25,10 @@ func _on_dungeon_done_generating():
 "
 
 [node name="Corridor" type="Node3D"]
-script = ExtResource("1_ycskp")
+script = ExtResource("1_jyojm")
+room_straight = ExtResource("2_ii5tw")
+room_corner = ExtResource("3_rs85m")
+room_tjunction = ExtResource("4_8fkn4")
 metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -60,4 +66,4 @@ size = Vector3(2, 4, 1)
 script = SubResource("GDScript_8fkn4")
 
 [node name="corridor" parent="." instance=ExtResource("3_ii5tw")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -5, 10)
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

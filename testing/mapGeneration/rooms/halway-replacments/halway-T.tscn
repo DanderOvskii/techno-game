@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4ejef3s2kf3n"]
+
+[ext_resource type="PackedScene" uid="uid://cucgunqjqhpyp" path="res://assets/models/environment/maptiles/corridor-split.glb" id="1_6pcm4"]
+
+[node name="Halway-t" type="Node3D"]
+
+[node name="corridor-split" parent="." instance=ExtResource("1_6pcm4")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
