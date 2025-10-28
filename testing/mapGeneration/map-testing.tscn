@@ -1,16 +1,119 @@
-[gd_scene load_steps=4 format=3 uid="uid://del4em7ehgna4"]
+[gd_scene load_steps=12 format=3 uid="uid://del4em7ehgna4"]
 
 [ext_resource type="Script" uid="uid://jmsspt1kqsuq" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="1_yt1jo"]
 [ext_resource type="PackedScene" uid="uid://cn02hrwpikkip" path="res://testing/mapGeneration/rooms/roomOne.tscn" id="2_cw4ka"]
 [ext_resource type="PackedScene" uid="uid://2siqowmiasac" path="res://testing/mapGeneration/rooms/corridor.tscn" id="3_myk2o"]
+[ext_resource type="PackedScene" uid="uid://dxh6xgyj6h3es" path="res://testing/mapGeneration/rooms/roomOne2.tscn" id="4_ugo3v"]
+[ext_resource type="PackedScene" uid="uid://cy586itvj3dji" path="res://testing/mapGeneration/rooms/startRoom.tscn" id="5_cqat8"]
+[ext_resource type="PackedScene" uid="uid://dxmljn5pbp0b1" path="res://testing/mapGeneration/rooms/stair.tscn" id="5_myu1e"]
+[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="7_ugo3v"]
+[ext_resource type="Script" uid="uid://c18dc0obh7a3j" path="res://testing/mapGeneration/rooms/corridor.gd" id="8_ruuq2"]
+[ext_resource type="PackedScene" uid="uid://33s65hpx6fj8" path="res://testing/mapGeneration/rooms/halway-replacments/halway-strait.tscn" id="9_fi3r0"]
+[ext_resource type="PackedScene" uid="uid://f7gmfod08p25" path="res://testing/mapGeneration/rooms/halway-replacments/halway-corner.tscn" id="10_rsmjs"]
+[ext_resource type="PackedScene" uid="uid://b4ejef3s2kf3n" path="res://testing/mapGeneration/rooms/halway-replacments/halway-T.tscn" id="11_gcbcb"]
 
 [node name="Map-testing" type="Node3D"]
 
 [node name="DungeonGenerator3D" type="Node3D" parent="."]
 script = ExtResource("1_yt1jo")
-room_scenes = Array[PackedScene]([ExtResource("2_cw4ka")])
+room_scenes = Array[PackedScene]([ExtResource("5_myu1e"), ExtResource("2_cw4ka"), ExtResource("4_ugo3v")])
 corridor_room_scene = ExtResource("3_myk2o")
-dungeon_size = Vector3i(22, 2, 20)
+dungeon_size = Vector3i(13, 6, 35)
 max_retries = 2
+amount_of_rooms = 5
 show_debug_in_editor = false
 metadata/_custom_type_script = "uid://jmsspt1kqsuq"
+
+[node name="Room-twofloors" parent="DungeonGenerator3D" instance=ExtResource("5_cqat8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 150)
+locked_room_rotations = 0
+
+[node name="Room-twofloors2" parent="DungeonGenerator3D" instance=ExtResource("5_cqat8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -20, -150)
+locked_room_rotations = 0
+
+[node name="RoomsContainer" type="Node3D" parent="DungeonGenerator3D"]
+
+[node name="RoomOne_0" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 10)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(3, 1, 5)
+lock_rotation = true
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="RoomOne_1" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -25, -80)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(3, 1, 5)
+lock_rotation = true
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="RoomOne_2" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("4_ugo3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 25, 90)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(3, 1, 5)
+lock_rotation = true
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="RoomOne_3" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("4_ugo3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, -140)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(3, 1, 5)
+lock_rotation = true
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="Stair_4" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -40, 0, 55)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(2, 2, 1)
+max_count = 15
+is_stair_room = true
+lock_rotation = true
+locked_room_rotations = 1
+
+[node name="Stair_5" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, -10, 45)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(2, 2, 1)
+max_count = 15
+is_stair_room = true
+lock_rotation = true
+locked_room_rotations = 1
+
+[node name="Stair_6" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60, -20, -65)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(2, 2, 1)
+max_count = 15
+is_stair_room = true
+lock_rotation = true
+locked_room_rotations = 1
+
+[node name="Stair_7" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40, 20, 55)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(2, 2, 1)
+max_count = 15
+is_stair_room = true
+lock_rotation = true
+locked_room_rotations = 1
+
+[node name="Stair_8" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 10, -115)
+script = ExtResource("7_ugo3v")
+size_in_voxels = Vector3i(2, 2, 1)
+max_count = 15
+is_stair_room = true
+lock_rotation = true
+locked_room_rotations = 1
+
+[node name="Corridor_109" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 40)
+script = ExtResource("8_ruuq2")
+room_straight = ExtResource("9_fi3r0")
+room_corner = ExtResource("10_rsmjs")
+room_tjunction = ExtResource("11_gcbcb")
+lock_rotation = null
+locked_room_rotations = null
+force_align_with_grid_button = 0
+metadata/_custom_type_script = "uid://c02cpa7oirtca"

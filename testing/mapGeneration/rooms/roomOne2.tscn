@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cn02hrwpikkip"]
+[gd_scene load_steps=5 format=3 uid="uid://dxh6xgyj6h3es"]
 
-[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ichts"]
-[ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_xr2hu"]
-[ext_resource type="PackedScene" uid="uid://t78u8dli4o88" path="res://assets/models/environment/maptiles/room-onestore.glb" id="3_y6yac"]
+[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_oao3o"]
+[ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_ico4o"]
+[ext_resource type="PackedScene" uid="uid://t78u8dli4o88" path="res://assets/models/environment/maptiles/room-onestore.glb" id="3_4326t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
-albedo_texture = ExtResource("2_xr2hu")
+albedo_texture = ExtResource("2_ico4o")
 uv1_triplanar = true
 
 [node name="RoomOne" type="Node3D"]
-script = ExtResource("1_ichts")
+script = ExtResource("1_oao3o")
 size_in_voxels = Vector3i(3, 1, 5)
 lock_rotation = true
 metadata/_custom_type_script = "uid://c02cpa7oirtca"
@@ -35,5 +35,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75229e-06, -2.75, 25.0439)
 operation = 2
 size = Vector3(2, 4, 1)
 
-[node name="room-onestore" parent="." instance=ExtResource("3_y6yac")]
+[node name="room-onestore" parent="." instance=ExtResource("3_4326t")]
 transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, 0, 0)

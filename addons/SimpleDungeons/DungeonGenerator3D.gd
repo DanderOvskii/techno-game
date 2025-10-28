@@ -56,6 +56,10 @@ var stage : BuildStage = BuildStage.NOT_STARTED :
 ## Generation stages: PLACE_ROOMS, PLACE_STAIRS, SEPARATE_ROOMS, CONNECT_ROOMS
 @export var max_safe_iterations : int = 250
 
+@export_range(1,999) var amount_of_rooms : int = 10:
+	set(v):
+		amount_of_rooms = max(1, v)
+
 ## Run generation of dungeon on a separate thread.
 ## It is safe to access vars .stage, .is_currently_generating, and .failed_to_generate but otherwise you should use .call_deferred_thread_group() to call any functions.
 ## Does not work in editor - was causing crashes so I disabled it.
@@ -377,7 +381,10 @@ func place_room_iteration(first_call_in_loop : bool) -> void:
 				if room_instances.find(room) != -1:
 					_fail_generation("custom_get_rooms_function supplied a room instance without cloning it. Always use DungeonRoom3D.create_clone_and_make_virtual_unless_visualizing() to create room instances.")
 					return
-	
+
+	if _rooms_placed.size() >= amount_of_rooms:
+		stage += 1
+		return
 	var rand_room : DungeonRoom3D
 	if _use_custom_rand_rooms:
 		rand_room = _custom_rand_rooms.pop_front()
@@ -740,7 +747,10 @@ func get_randomly_positioned_room() -> DungeonRoom3D:
 	room = room.create_clone_and_make_virtual_unless_visualizing()
 	var buf := dungeon_size - room.get_grid_aabbi(false).size
 	var rand_pos : Vector3i = Vector3i(rng.randi_range(0, buf.x), rng.randi_range(0, buf.y), rng.randi_range(0, buf.z))
-	room.room_rotations = rng.randi_range(0,3)
+	if room.lock_rotation:
+		room.room_rotations = room.locked_room_rotations
+	else:
+		room.room_rotations = rng.randi_range(0,3)
 	room.set_position_by_grid_pos(rand_pos)
 	return room
 

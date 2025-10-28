@@ -24,6 +24,19 @@ var dungeon_generator : DungeonGenerator3D :
 ## For the dungeon to generate, you must mark at least 1 room as a stair and have its doors span multiple floors.
 @export var is_stair_room := false
 
+@export var allow_multifloor := false
+
+@export var lock_rotation := false
+@export_range(0,3,1) var locked_room_rotations : int = 0
+var room_rotations : int :
+	set(v): 
+		print("Setting rotation: ", v, " Lock: ", lock_rotation, " Locked value: ", locked_room_rotations)
+		if lock_rotation:
+			virtual_transform.basis = Basis.from_euler(Vector3(0,locked_room_rotations * deg_to_rad(90.0),0)).scaled(virtual_transform.basis.get_scale())
+		else:
+			virtual_transform.basis = Basis.from_euler(Vector3(0,wrapi(v, 0, 4) * deg_to_rad(90.0),0)).scaled(virtual_transform.basis.get_scale())
+	get: return round(wrapi(round(virtual_transform.basis.get_euler().y / deg_to_rad(90.0)), 0, 4))
+
 ## Preplaced rooms are immovable rooms you can place at a preset position in the dungeon
 @export_group("Pre-placed room options")
 ## Editor button to align the room's position & scale with the dungeon's voxel grid.
@@ -50,9 +63,6 @@ var was_preplaced = false :
 		else: return was_preplaced
 
 ## Number of 90 degree rotations around the y axis
-var room_rotations : int :
-	set(v): virtual_transform.basis = Basis.from_euler(Vector3(0,wrapi(v, 0, 4) * deg_to_rad(90.0),0)).scaled(virtual_transform.basis.get_scale())
-	get: return round(wrapi(round(virtual_transform.basis.get_euler().y / deg_to_rad(90.0)), 0, 4))
 
 # For performance, we should not spawn/instantiate many dungeon rooms.
 # This is because the dungeon generator may have to restart multiple times.
@@ -96,7 +106,7 @@ func _process(delta):
 	if Engine.is_editor_hint():
 		return
 
-const _dungeon_room_export_props_names = ["size_in_voxels", "voxel_scale", "min_count", "max_count", "is_stair_room", "show_debug_in_editor", "show_debug_in_game", "show_grid_aabb_with_doors"]
+const _dungeon_room_export_props_names = ["size_in_voxels", "voxel_scale", "min_count", "max_count", "is_stair_room", "show_debug_in_editor", "show_debug_in_game", "show_grid_aabb_with_doors",  "lock_rotation","locked_room_rotations"]
 func copy_all_props(from : DungeonRoom3D, to : DungeonRoom3D) -> void:
 	for prop in _dungeon_room_export_props_names:
 		if from.get(prop) != to.get(prop):
@@ -309,8 +319,14 @@ func constrain_room_to_bounds_with_doors():
 
 ## Room must be scaled so voxel scale matches the DungeonGenerator3D's voxel scale.
 func snap_rotation_and_scale_to_dungeon_grid() -> void:
-	virtual_transform = Transform3D(Basis().rotated(Vector3(0,1,0), self.room_rotations * deg_to_rad(90.0)).scaled(dungeon_generator.voxel_scale / voxel_scale), virtual_transform.origin)
+	var scale_factor := dungeon_generator.voxel_scale / voxel_scale
+	var rotation_step := locked_room_rotations if lock_rotation else room_rotations
+	var rotation_angle := rotation_step * deg_to_rad(90.0)
 
+	virtual_transform = Transform3D(
+		Basis().rotated(Vector3.UP, rotation_angle).scaled(scale_factor),
+		virtual_transform.origin
+	)
 ## Returns room pos from corner (min) of AABB on dungeon grid 
 func get_grid_pos() -> Vector3i:
 	return get_grid_aabbi(false).position
@@ -408,7 +424,8 @@ func validate_room(error_callback = null, warning_callback = null) -> bool:
 		return acc, {})
 	if is_stair_room and unique_door_y.keys().size() < 2:
 		error_callback.call("Room "+self.name+" is set as is_stair_room but does not have doors leading to 2 or more floors.")
-	
+	elif not is_stair_room and not allow_multifloor and unique_door_y.keys().size() > 1:
+		error_callback.call("Room "+self.name+" has doors on multiple floors but is not marked as a stair room or allow_multifloor.")
 	# Post instantiate/place checks:
 	if not dungeon_generator:
 		return not any_errors["err"]

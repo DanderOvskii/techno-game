@@ -1,16 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7dycbxvk8574"]
+[gd_scene load_steps=5 format=3 uid="uid://cy586itvj3dji"]
 
-[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_xb4t3"]
-[ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_8xsr8"]
-[ext_resource type="PackedScene" uid="uid://c856qy61sw7k7" path="res://assets/models/environment/maptiles/room-twostore.glb" id="2_65yt0"]
+[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_54j5g"]
+[ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_kb5g5"]
+[ext_resource type="PackedScene" uid="uid://c856qy61sw7k7" path="res://assets/models/environment/maptiles/room-twostore.glb" id="3_xaubk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcik5"]
-albedo_texture = ExtResource("2_8xsr8")
+albedo_texture = ExtResource("2_kb5g5")
 uv1_triplanar = true
 
 [node name="Room-twofloors" type="Node3D"]
-script = ExtResource("1_xb4t3")
+script = ExtResource("1_54j5g")
 size_in_voxels = Vector3i(3, 2, 5)
+locked_room_rotations = null
 metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -24,7 +25,7 @@ size = Vector3(30, 20, 50)
 operation = 2
 size = Vector3(29.5, 9.5, 49.5)
 
-[node name="DOOR_F_CUT" type="CSGBox3D" parent="CSGBox3D"]
+[node name="DOOR?_F_CUT" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70281e-06, -2.75, -24.7278)
 operation = 2
 size = Vector3(2, 4, 1)
@@ -34,5 +35,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75229e-06, -2.75, 25.0439)
 operation = 2
 size = Vector3(2, 4, 1)
 
-[node name="room-twostore" parent="." instance=ExtResource("2_65yt0")]
+[node name="room-twostore" parent="." instance=ExtResource("3_xaubk")]
 transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, -0.75, 0)
