@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://brs3xpi7hi383"]
 
-[ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://testing/mapGeneration/map-testing.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://buq0yhp21p2i" path="res://testing/DebugFlyCamera.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://scenes/environment/map-generation.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dy3pclipcci3c" path="res://testing/player_testing.tscn" id="2_0xm2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -26,6 +26,11 @@ environment = SubResource("Environment_1bvp3")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="DebugFlyCamera" parent="." instance=ExtResource("2_0xm2m")]
+[node name="PlayerTesting" parent="." instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.0879, 76.0884)
+SPEED = 15.0
+run_fov = 120.0
+normal_fov = 100.0
+fov_speed = 10.0
 
-[node name="Map-testing" parent="." instance=ExtResource("1_ig7tw")]
+[node name="map-generation" parent="." instance=ExtResource("1_ig7tw")]

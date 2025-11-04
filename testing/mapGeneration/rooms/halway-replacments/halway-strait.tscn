@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://33s65hpx6fj8"]
-
-[ext_resource type="PackedScene" uid="uid://c7o2eugd6uuaf" path="res://assets/models/environment/maptiles/corridor-streat.glb" id="1_qukia"]
-
-[node name="Halway-strait" type="Node3D"]
-
-[node name="corridor-streat" parent="." instance=ExtResource("1_qukia")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)

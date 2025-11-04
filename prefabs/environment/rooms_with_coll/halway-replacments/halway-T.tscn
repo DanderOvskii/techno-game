@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4ejef3s2kf3n"]
+
+[ext_resource type="PackedScene" uid="uid://crdubp0lc5ga6" path="res://assets/models/environment/maptiles-with-collision/main/tsection/tsection-colonly.glb" id="1_wnfq2"]
+[ext_resource type="PackedScene" uid="uid://bcn1jaqxnyweg" path="res://assets/models/environment/maptiles-with-collision/main/tsection/tsection.glb" id="2_2t6gu"]
+
+[node name="Halway-t" type="Node3D"]
+
+[node name="tsection-colonly2" parent="." instance=ExtResource("1_wnfq2")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="tsection2" parent="." instance=ExtResource("2_2t6gu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

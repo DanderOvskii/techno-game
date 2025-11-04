@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn02hrwpikkip"]
+
+[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ichts"]
+[ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_xr2hu"]
+[ext_resource type="PackedScene" uid="uid://b86por67k1wx5" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_0f4bw"]
+[ext_resource type="PackedScene" uid="uid://bypnnk7825ufs" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_p0oee"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
+albedo_texture = ExtResource("2_xr2hu")
+uv1_triplanar = true
+
+[node name="RoomOne" type="Node3D"]
+script = ExtResource("1_ichts")
+size_in_voxels = Vector3i(3, 1, 5)
+voxel_scale = Vector3(5, 5, 5)
+lock_rotation = true
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.68248e-07, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_2dt3i")
+size = Vector3(15, 5, 25)
+
+[node name="DOOR_F_CUT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08686e-06, 0, -12.2957)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="DOOR_B_CUT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06069e-06, 0, 12.9111)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="roomsmall-colonly2" parent="." instance=ExtResource("3_0f4bw")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="roomsmall2" parent="." instance=ExtResource("4_p0oee")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

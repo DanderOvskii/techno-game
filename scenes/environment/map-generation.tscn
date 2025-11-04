@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://del4em7ehgna4"]
+
+[ext_resource type="Script" uid="uid://jmsspt1kqsuq" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="1_yt1jo"]
+[ext_resource type="PackedScene" uid="uid://cn02hrwpikkip" path="res://prefabs/environment/rooms_with_coll/roomsmall_room.tscn" id="2_cw4ka"]
+[ext_resource type="PackedScene" uid="uid://2siqowmiasac" path="res://prefabs/environment/rooms_with_coll/corridor_room.tscn" id="3_myk2o"]
+[ext_resource type="PackedScene" uid="uid://dxmljn5pbp0b1" path="res://prefabs/environment/rooms_with_coll/stair_room.tscn" id="5_myu1e"]
+[ext_resource type="PackedScene" uid="uid://bmqt801h5p3nj" path="res://prefabs/environment/rooms_with_coll/startSmall_room.tscn" id="6_cqat8"]
+
+[node name="map-generation" type="Node3D"]
+
+[node name="DungeonGenerator3D" type="Node3D" parent="."]
+script = ExtResource("1_yt1jo")
+room_scenes = Array[PackedScene]([ExtResource("5_myu1e"), ExtResource("2_cw4ka")])
+corridor_room_scene = ExtResource("3_myk2o")
+dungeon_size = Vector3i(13, 6, 35)
+voxel_scale = Vector3(5, 5, 5)
+max_retries = 2
+amount_of_rooms = 5
+show_debug_in_editor = false
+metadata/_custom_type_script = "uid://jmsspt1kqsuq"
+
+[node name="RoomOne" parent="DungeonGenerator3D" instance=ExtResource("6_cqat8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, 75)
+
+[node name="RoomsContainer" type="Node3D" parent="DungeonGenerator3D"]
+
+[node name="RoomOne_0" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -12.5, 30)
+
+[node name="RoomOne_1" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -7.5, 70)
+
+[node name="Stair_2" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 10, 2.5)
+
+[node name="Stair_3" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 5, -42.5)
+
+[node name="Stair_4" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -12.5)
+
+[node name="Stair_5" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, -5, 22.5)
+
+[node name="Stair_6" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, -10, 47.5)

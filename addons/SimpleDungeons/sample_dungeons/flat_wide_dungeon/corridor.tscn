@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://dxfeid3jv45ca"]
 
-[ext_resource type="Script" path="res://addons/SimpleDungeons/sample_dungeons/flat_wide_dungeon/corridor.gd" id="1_lsitp"]
+[ext_resource type="Script" uid="uid://cvj0d4mlwlbq6" path="res://testing/mapGeneration/rooms_with_coll/corridor.gd" id="1_lsitp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upkxj"]
 resource_name = "dark grey"

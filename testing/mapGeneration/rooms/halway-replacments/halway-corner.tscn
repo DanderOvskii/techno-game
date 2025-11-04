@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://f7gmfod08p25"]
-
-[ext_resource type="PackedScene" uid="uid://bu3txe061hgik" path="res://assets/models/environment/maptiles/corridor-corner.glb" id="1_yx8e3"]
-
-[node name="Halway-corner" type="Node3D"]
-
-[node name="corridor-corner" parent="." instance=ExtResource("1_yx8e3")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
