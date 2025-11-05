@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh32su754dosj"]
+
+[ext_resource type="Script" uid="uid://de6d75odn1bso" path="res://testing/music_mashine/music_mashine.gd" id="2_r4o0w"]
+[ext_resource type="AudioStream" uid="uid://ctqj7ca7vnb3y" path="res://testing/music_mashine/samples/House Kick 37.wav" id="3_jawi1"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("2_r4o0w")
+pattern_kick = [1, 0, 1, 0]
+
+[node name="kick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jawi1")

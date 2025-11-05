@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://brs3xpi7hi383"]
+[gd_scene load_steps=7 format=3 uid="uid://brs3xpi7hi383"]
 
 [ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://scenes/environment/map-generation.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dy3pclipcci3c" path="res://testing/player_testing.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bh32su754dosj" path="res://testing/music_mashine/music_mashine.tscn" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -34,3 +35,5 @@ normal_fov = 100.0
 fov_speed = 10.0
 
 [node name="map-generation" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="MusicMashine" parent="." instance=ExtResource("3_h2yge")]
