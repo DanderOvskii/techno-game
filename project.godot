@@ -13,7 +13,13 @@ config_version=5
 config/name="techno-game"
 run/main_scene="uid://brs3xpi7hi383"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/image="uid://gweamtnxmepx"
+config/icon="uid://gweamtnxmepx"
+
+[autoload]
+
+MusicManager="*res://testing/music_mashine/music_manager.gd"
+PatternManager="*res://testing/music_mashine/pattern_manager.gd"
 
 [editor_plugins]
 
@@ -22,6 +28,10 @@ enabled=PackedStringArray("res://addons/SimpleDungeons/plugin.cfg")
 [filesystem]
 
 import/blender/enabled=false
+
+[global_group]
+
+player=""
 
 [input]
 
