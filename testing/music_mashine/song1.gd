@@ -1,21 +1,18 @@
 extends Node3D
 
 var pattern_one = {
-	"length": 16,
 	"kick":[true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false],
 	"snare": [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false,],
 	"hihat": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
 }
 
 var transition_fill = {
-	"length": 16,
 	"kick":  [true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false],
 	"snare": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
 	"hihat": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
 }
 
 var pattern_two = {
-	"length": 16,
 	"kick":[true, false, false, false, true, false, false, false, true, false, false, false, true, false, false, false],
 	"snare": [false, false, false, false, true, false, false, false, false, false, false, false, true, false, false, false,],
 	"hihat": [false, false, true, false, false, false, true, false, false, false, true, false, false, false, true, false]
