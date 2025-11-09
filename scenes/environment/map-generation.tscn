@@ -22,6 +22,9 @@ metadata/_custom_type_script = "uid://jmsspt1kqsuq"
 [node name="RoomOne" parent="DungeonGenerator3D" instance=ExtResource("6_cqat8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, 75)
 
+[node name="RoomOne2" parent="DungeonGenerator3D" instance=ExtResource("6_cqat8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, 50)
+
 [node name="RoomsContainer" type="Node3D" parent="DungeonGenerator3D"]
 
 [node name="RoomOne_0" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]

@@ -2,12 +2,14 @@ extends Area3D
 
 signal player_entered
 
+@export var AreaId : int
+
 func _ready():
 	print("TriggerArea ready")
 	body_entered.connect(self._on_body_entered)
 
 
 func _on_body_entered(body:Node3D):
-	print("Body entered: ", body.name)
 	if body.is_in_group("player"):  
-		player_entered.emit()
+		print("Player entered Trigger Area: %d" % AreaId)
+		player_entered.emit(AreaId)

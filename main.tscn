@@ -42,11 +42,22 @@ fov_speed = 10.0
 
 [node name="MusicMashine" parent="." instance=ExtResource("3_h2yge")]
 
-[node name="TriggerArea" type="Area3D" parent="."]
+[node name="TriggerArea" type="Area3D" parent="." groups=["music_areas"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.9402, 66.2446)
 script = ExtResource("4_1bvp3")
+AreaId = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
 shape = SubResource("BoxShape3D_lquwl")
 
+[node name="TriggerArea2" type="Area3D" parent="." groups=["music_areas"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.94, 38.8761)
+script = ExtResource("4_1bvp3")
+AreaId = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.17791)
+shape = SubResource("BoxShape3D_lquwl")
+
 [connection signal="body_entered" from="TriggerArea" to="TriggerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="TriggerArea2" to="TriggerArea2" method="_on_body_entered"]
