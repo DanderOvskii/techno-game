@@ -10,9 +10,9 @@ var pattern_kick_snare = {
 }
 
 var sound_set_boring={
-	"kick": preload("res://testing/music_mashine/samples/House Kick 37.wav"),
-	"snare": preload("res://testing/music_mashine/samples/House Snare 16.wav"),
-	"hihat": preload("res://testing/music_mashine/samples/House HiHat 01.wav")
+	"kick": preload("res://assets/audio/music/samples/House Kick 37.wav"),
+	"snare": preload("res://assets/audio/music/samples/House Snare 16.wav"),
+	"hihat": preload("res://assets/audio/music/samples/House HiHat 01.wav")
 }
 
 var transition_fill = {
@@ -22,9 +22,9 @@ var transition_fill = {
 }
 
 var sound_set_transition={
-	"kick": preload("res://testing/music_mashine/samples/TKNVLT_FREE_HT_SCHRANZ_KICK_160_1.wav"),
-	"snare": preload("res://testing/music_mashine/samples/House Snare 16.wav"),
-	"hihat": preload("res://testing/music_mashine/samples/House HiHat 01.wav")
+	"kick": preload("res://assets/audio/music/samples/TKNVLT_FREE_HT_SCHRANZ_KICK_160_1.wav"),
+	"snare": preload("res://assets/audio/music/samples/House Snare 16.wav"),
+	"hihat": preload("res://assets/audio/music/samples/House HiHat 01.wav")
 }
 
 var pattern_kick = {
@@ -34,9 +34,9 @@ var pattern_kick = {
 }
 
 var sound_set_explosive_kick={
-	"kick": preload("res://testing/music_mashine/samples/TKNVLT_FREE_HT_SCHRANZ_KICK_160_3.wav"),
-	"snare": preload("res://testing/music_mashine/samples/House Snare 16.wav"),
-	"hihat": preload("res://testing/music_mashine/samples/House HiHat 01.wav")
+	"kick": preload("res://assets/audio/music/samples/TKNVLT_FREE_HT_SCHRANZ_KICK_160_3.wav"),
+	"snare": preload("res://assets/audio/music/samples/House Snare 16.wav"),
+	"hihat": preload("res://assets/audio/music/samples/House HiHat 01.wav")
 }
 
 func _ready():

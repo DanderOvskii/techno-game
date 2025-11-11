@@ -18,8 +18,8 @@ config/icon="uid://gweamtnxmepx"
 
 [autoload]
 
-MusicManager="*res://testing/music_mashine/music_manager.gd"
-PatternManager="*res://testing/music_mashine/pattern_manager.gd"
+MusicManager="*res://scripts/music_mashine/music_manager.gd"
+PatternManager="*res://scripts/music_mashine/pattern_manager.gd"
 
 [editor_plugins]
 

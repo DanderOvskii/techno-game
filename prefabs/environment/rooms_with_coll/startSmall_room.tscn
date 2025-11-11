@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_5rjwt"]
 [ext_resource type="PackedScene" uid="uid://cc8ih1f0dc8u2" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_w8t1m"]
 [ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_qrxyh"]
-[ext_resource type="Script" uid="uid://citydhedft4tn" path="res://testing/music_mashine/triggererea.gd" id="5_8246s"]
+[ext_resource type="Script" uid="uid://citydhedft4tn" path="res://scripts/music_mashine/triggererea.gd" id="5_8246s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
 albedo_texture = ExtResource("2_5rjwt")

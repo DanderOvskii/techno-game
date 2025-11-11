@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh32su754dosj"]
 
-[ext_resource type="Script" uid="uid://b4iwybh2iu2vn" path="res://testing/music_mashine/song1.gd" id="1_pmpy3"]
-[ext_resource type="AudioStream" uid="uid://ctqj7ca7vnb3y" path="res://testing/music_mashine/samples/House Kick 37.wav" id="3_jawi1"]
-[ext_resource type="AudioStream" uid="uid://dx0tt1ys0xm2k" path="res://testing/music_mashine/samples/House Snare 16.wav" id="3_s4rbq"]
-[ext_resource type="AudioStream" uid="uid://cvw80oq22tbbi" path="res://testing/music_mashine/samples/House HiHat 01.wav" id="4_pmpy3"]
+[ext_resource type="Script" uid="uid://b4iwybh2iu2vn" path="res://scripts/music_mashine/song1.gd" id="1_pmpy3"]
+[ext_resource type="AudioStream" uid="uid://ctqj7ca7vnb3y" path="res://assets/audio/music/samples/House Kick 37.wav" id="3_jawi1"]
+[ext_resource type="AudioStream" uid="uid://dx0tt1ys0xm2k" path="res://assets/audio/music/samples/House Snare 16.wav" id="3_s4rbq"]
+[ext_resource type="AudioStream" uid="uid://cvw80oq22tbbi" path="res://assets/audio/music/samples/House HiHat 01.wav" id="4_pmpy3"]
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("kick", "snare", "hihat")]
 script = ExtResource("1_pmpy3")

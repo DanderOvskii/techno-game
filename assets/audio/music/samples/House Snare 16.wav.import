@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dx0tt1ys0xm2k"
-path="res://.godot/imported/House Snare 16.wav-b4077b66eedb8ba5e7d5640a20e25fe3.sample"
+path="res://.godot/imported/House Snare 16.wav-7666d68bec027a148b1e06923e0ae31e.sample"
 
 [deps]
 
-source_file="res://testing/music_mashine/samples/House Snare 16.wav"
-dest_files=["res://.godot/imported/House Snare 16.wav-b4077b66eedb8ba5e7d5640a20e25fe3.sample"]
+source_file="res://assets/audio/music/samples/House Snare 16.wav"
+dest_files=["res://.godot/imported/House Snare 16.wav-7666d68bec027a148b1e06923e0ae31e.sample"]
 
 [params]
 

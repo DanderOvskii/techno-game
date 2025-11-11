@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ctqj7ca7vnb3y"
-path="res://.godot/imported/House Kick 37.wav-778a14e9b2d1c25bb332162a968787c3.sample"
+path="res://.godot/imported/House Kick 37.wav-084be68518dfc666942216d08bbed152.sample"
 
 [deps]
 
-source_file="res://testing/music_mashine/samples/House Kick 37.wav"
-dest_files=["res://.godot/imported/House Kick 37.wav-778a14e9b2d1c25bb332162a968787c3.sample"]
+source_file="res://assets/audio/music/samples/House Kick 37.wav"
+dest_files=["res://.godot/imported/House Kick 37.wav-084be68518dfc666942216d08bbed152.sample"]
 
 [params]
 
