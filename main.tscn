@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://brs3xpi7hi383"]
+[gd_scene load_steps=7 format=3 uid="uid://brs3xpi7hi383"]
 
 [ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://scenes/environment/map-generation.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dy3pclipcci3c" path="res://testing/player_testing.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bh32su754dosj" path="res://testing/music_mashine/music_mashine.tscn" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://citydhedft4tn" path="res://testing/music_mashine/triggererea.gd" id="4_1bvp3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -18,9 +17,6 @@ sky = SubResource("Sky_h2yge")
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
-size = Vector3(17.81, 7.165, 12.5638)
 
 [node name="Node3D" type="Node3D"]
 
@@ -41,23 +37,3 @@ fov_speed = 10.0
 [node name="map-generation" parent="." instance=ExtResource("1_ig7tw")]
 
 [node name="MusicMashine" parent="." instance=ExtResource("3_h2yge")]
-
-[node name="TriggerArea" type="Area3D" parent="." groups=["music_areas"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.9402, 66.2446)
-script = ExtResource("4_1bvp3")
-AreaId = 1
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
-shape = SubResource("BoxShape3D_lquwl")
-
-[node name="TriggerArea2" type="Area3D" parent="." groups=["music_areas"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.94, 38.8761)
-script = ExtResource("4_1bvp3")
-AreaId = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.17791)
-shape = SubResource("BoxShape3D_lquwl")
-
-[connection signal="body_entered" from="TriggerArea" to="TriggerArea" method="_on_body_entered"]
-[connection signal="body_entered" from="TriggerArea2" to="TriggerArea2" method="_on_body_entered"]

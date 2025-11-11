@@ -1,18 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn02hrwpikkip"]
+[gd_scene load_steps=8 format=3 uid="uid://cn02hrwpikkip"]
 
 [ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ichts"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_xr2hu"]
-[ext_resource type="PackedScene" uid="uid://b86por67k1wx5" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_0f4bw"]
-[ext_resource type="PackedScene" uid="uid://bypnnk7825ufs" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_p0oee"]
+[ext_resource type="PackedScene" uid="uid://cc8ih1f0dc8u2" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_0f4bw"]
+[ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_p0oee"]
+[ext_resource type="Script" uid="uid://citydhedft4tn" path="res://testing/music_mashine/triggererea.gd" id="5_12uep"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
 albedo_texture = ExtResource("2_xr2hu")
 uv1_triplanar = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ph6dg"]
+size = Vector3(15, 4.5, 25)
+
 [node name="RoomOne" type="Node3D"]
 script = ExtResource("1_ichts")
 size_in_voxels = Vector3i(3, 1, 5)
 voxel_scale = Vector3(5, 5, 5)
+min_count = 25
+max_count = 30
 lock_rotation = true
 metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
@@ -37,3 +43,12 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="roomsmall2" parent="." instance=ExtResource("4_p0oee")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="TriggerArea" type="Area3D" parent="." groups=["music_areas"]]
+script = ExtResource("5_12uep")
+AreaId = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
+shape = SubResource("BoxShape3D_ph6dg")
+
+[connection signal="body_entered" from="TriggerArea" to="TriggerArea" method="_on_body_entered"]
