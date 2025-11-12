@@ -52,5 +52,3 @@ AreaId = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
 shape = SubResource("BoxShape3D_peyg6")
-
-[connection signal="body_entered" from="TriggerArea" to="TriggerArea" method="_on_body_entered"]

@@ -17,8 +17,8 @@ size = Vector3(15, 4.5, 25)
 script = ExtResource("1_ichts")
 size_in_voxels = Vector3i(3, 1, 5)
 voxel_scale = Vector3(5, 5, 5)
-min_count = 25
-max_count = 30
+min_count = 15
+max_count = 20
 lock_rotation = true
 metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
@@ -50,5 +50,3 @@ AreaId = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
 shape = SubResource("BoxShape3D_ph6dg")
-
-[connection signal="body_entered" from="TriggerArea" to="TriggerArea" method="_on_body_entered"]
