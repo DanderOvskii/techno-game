@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b40rrvpk7oy8x"
-path.s3tc="res://.godot/imported/halway_maptexture.png-b04761c54a8d7b591bfbb747b0c4b7dc.s3tc.ctex"
+uid="uid://bhl2thcim7cru"
+path.s3tc="res://.godot/imported/roomsmall_maptexture.png-a5b05791df895219835e97bb56e9abb4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/environment/maptiles-with-collision/main/halway/halway_maptexture.png"
-dest_files=["res://.godot/imported/halway_maptexture.png-b04761c54a8d7b591bfbb747b0c4b7dc.s3tc.ctex"]
+source_file="res://assets/textures/environment/roomsmall_maptexture.png"
+dest_files=["res://.godot/imported/roomsmall_maptexture.png-a5b05791df895219835e97bb56e9abb4.s3tc.ctex"]
 
 [params]
 

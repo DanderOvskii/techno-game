@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgit36ps1f6kt"]
+
+[ext_resource type="PackedScene" uid="uid://2siqowmiasac" path="res://prefabs/environment/rooms_with_coll/corridor_room.tscn" id="1_yih7p"]
+
+[node name="CurvTest" type="Node3D"]
+
+[node name="Corridor" parent="." instance=ExtResource("1_yih7p")]
