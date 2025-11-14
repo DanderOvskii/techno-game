@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gweamtnxmepx"
-path.s3tc="res://.godot/imported/gameicon.png-2453d8480d2fa682867e8870f0d5ecf2.s3tc.ctex"
+uid="uid://d4fr3m0o2rgwk"
+path.s3tc="res://.godot/imported/atlas.png-0fcc4ac1524a70e522eefd337533f25f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://gameicon.png"
-dest_files=["res://.godot/imported/gameicon.png-2453d8480d2fa682867e8870f0d5ecf2.s3tc.ctex"]
+source_file="res://assets/textures/environment/atlas.png"
+dest_files=["res://.godot/imported/atlas.png-0fcc4ac1524a70e522eefd337533f25f.s3tc.ctex"]
 
 [params]
 

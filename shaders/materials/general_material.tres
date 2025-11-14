@@ -1,15 +1,18 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dnga306p5glv8"]
 
 [ext_resource type="Shader" uid="uid://wbn2gmfhyo63" path="res://shaders/fx/dungen_room_shader.gdshader" id="1_q04ep"]
-[ext_resource type="Texture2D" uid="uid://bhl2thcim7cru" path="res://assets/textures/environment/roomsmall_maptexture.png" id="2_oix1h"]
+[ext_resource type="Texture2D" uid="uid://d4fr3m0o2rgwk" path="res://assets/textures/environment/atlas.png" id="2_oix1h"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_q04ep")
-shader_parameter/curvature_strength = 0.0200001
+shader_parameter/curvature_strength = 0.009
 shader_parameter/camera_position = Vector3(0, 0, 0)
+shader_parameter/frames = 4
+shader_parameter/frame_offset = 0.0
+shader_parameter/bpm = 0.0
 shader_parameter/albedo_texture = ExtResource("2_oix1h")
 shader_parameter/albedo_color = Color(1, 1, 1, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 1.0
-shader_parameter/tun_off_curf = true
+shader_parameter/tun_off_curf = false

@@ -29,7 +29,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="PlayerTesting" parent="." groups=["player"] instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.0879, 78.6236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.0879, 72.3879)
 SPEED = 15.0
 run_fov = 120.0
 normal_fov = 100.0

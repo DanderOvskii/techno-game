@@ -1,0 +1,18 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c2j0bqi8knhdu"]
+
+[ext_resource type="Shader" uid="uid://wbn2gmfhyo63" path="res://shaders/fx/dungen_room_shader.gdshader" id="1_5ti21"]
+[ext_resource type="Texture2D" uid="uid://gweamtnxmepx" path="res://gameicon.png" id="2_ikrvb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_5ti21")
+shader_parameter/curvature_strength = 0.001
+shader_parameter/camera_position = Vector3(0, 0, 0)
+shader_parameter/frames = 4
+shader_parameter/frame_offset = 0.0
+shader_parameter/bpm = 120.0
+shader_parameter/albedo_texture = ExtResource("2_ikrvb")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/tun_off_curf = true

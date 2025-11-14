@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgit36ps1f6kt"]
+[gd_scene load_steps=3 format=3 uid="uid://cgit36ps1f6kt"]
 
-[ext_resource type="PackedScene" uid="uid://2siqowmiasac" path="res://prefabs/environment/rooms_with_coll/corridor_room.tscn" id="1_yih7p"]
+[ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="1_t24cs"]
+[ext_resource type="PackedScene" uid="uid://bhtv17omise0s" path="res://assets/models/environment/maptiles-with-collision/main/stairs/stairs.glb" id="2_21ws4"]
 
 [node name="CurvTest" type="Node3D"]
 
-[node name="Corridor" parent="." instance=ExtResource("1_yih7p")]
+[node name="roomsmall2" parent="." instance=ExtResource("1_t24cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.97881)
+
+[node name="stairs2" parent="." instance=ExtResource("2_21ws4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.08096)

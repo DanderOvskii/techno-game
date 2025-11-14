@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gweamtnxmepx"
-path.s3tc="res://.godot/imported/gameicon.png-2453d8480d2fa682867e8870f0d5ecf2.s3tc.ctex"
+uid="uid://dfx1hvions0uo"
+path.s3tc="res://.godot/imported/stairs_maptexture.png-c142a5d9b3af011ca334bd7c8130d968.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "4839b702cd4790f8e965aacc5b388fda"
+}
 
 [deps]
 
-source_file="res://gameicon.png"
-dest_files=["res://.godot/imported/gameicon.png-2453d8480d2fa682867e8870f0d5ecf2.s3tc.ctex"]
+source_file="res://assets/models/environment/maptiles-with-collision/main/stairs/stairs_maptexture.png"
+dest_files=["res://.godot/imported/stairs_maptexture.png-c142a5d9b3af011ca334bd7c8130d968.s3tc.ctex"]
 
 [params]
 
