@@ -15,3 +15,4 @@ shape = SubResource("CapsuleShape3D_ofbi1")
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972433, -0.293688)
 script = ExtResource("2_ofbi1")
+curvature_strength = 0.02

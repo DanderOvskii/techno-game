@@ -1,4 +1,4 @@
-uniform float curvature_strength : hint_range(-0.02, 0.02) = 0.001;
+uniform float curvature_strength : hint_range(-0.02, 0.02);
 uniform vec3 camera_position = vec3(0.0, 0.0, 0.0);
 
 

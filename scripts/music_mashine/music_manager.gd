@@ -1,4 +1,3 @@
-# res://globals/BeatManager.gd
 extends Node
 
 signal beat(index: int)
