@@ -6,8 +6,8 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_5ti21")
-shader_parameter/curvature_strength = 0.009
-shader_parameter/camera_position = Vector3(0, 13.0603, 72.0942)
+shader_parameter/curvature_strength = 0.02
+shader_parameter/camera_position = Vector3(0, 13.0603, 67.6656)
 shader_parameter/frames = 4
 shader_parameter/frame_offset = 0.0
 shader_parameter/bpm = 0.0

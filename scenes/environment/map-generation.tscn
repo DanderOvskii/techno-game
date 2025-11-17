@@ -1,15 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://del4em7ehgna4"]
+[gd_scene load_steps=6 format=3 uid="uid://del4em7ehgna4"]
 
 [ext_resource type="Script" uid="uid://jmsspt1kqsuq" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="1_yt1jo"]
 [ext_resource type="PackedScene" uid="uid://cn02hrwpikkip" path="res://prefabs/environment/rooms_with_coll/roomsmall_room.tscn" id="2_cw4ka"]
 [ext_resource type="PackedScene" uid="uid://2siqowmiasac" path="res://prefabs/environment/rooms_with_coll/corridor_room.tscn" id="3_myk2o"]
 [ext_resource type="PackedScene" uid="uid://dxmljn5pbp0b1" path="res://prefabs/environment/rooms_with_coll/stair_room.tscn" id="5_myu1e"]
-[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="6_0dkfa"]
 [ext_resource type="PackedScene" uid="uid://bmqt801h5p3nj" path="res://prefabs/environment/rooms_with_coll/startSmall_room.tscn" id="6_cqat8"]
-[ext_resource type="Script" uid="uid://c18dc0obh7a3j" path="res://addons/SimpleDungeons/corridor_replace_Room.gd" id="7_0q73l"]
-[ext_resource type="PackedScene" uid="uid://33s65hpx6fj8" path="res://prefabs/environment/rooms_with_coll/halway-replacments/halway-strait.tscn" id="8_uj0bg"]
-[ext_resource type="PackedScene" uid="uid://f7gmfod08p25" path="res://prefabs/environment/rooms_with_coll/halway-replacments/halway-corner.tscn" id="9_bcdx8"]
-[ext_resource type="PackedScene" uid="uid://b4ejef3s2kf3n" path="res://prefabs/environment/rooms_with_coll/halway-replacments/halway-T.tscn" id="10_hh3t6"]
 
 [node name="map-generation" type="Node3D"]
 
@@ -35,211 +30,65 @@ lock_rotation = false
 
 [node name="RoomsContainer" type="Node3D" parent="DungeonGenerator3D"]
 
-[node name="RoomOne_0" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_0" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -12.5, 60)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_1" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_1" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -2.5, -5)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_2" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_2" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, -60)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_3" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_3" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -2.5, -25)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_4" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_4" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -2.5, 15)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_5" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_5" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -12.5, -50)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_6" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_6" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -7.5, -40)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_7" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_7" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -7.5, -70)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_8" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_8" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -7.5, -5)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_9" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_9" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 2.5, -40)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_10" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_10" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -12.5, 15)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_11" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_11" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -7.5, -25)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_12" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_12" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.5, -50)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_13" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_13" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 65)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="RoomOne_14" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
+[node name="RoomOne_14" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -2.5, 45)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(3, 1, 5)
-voxel_scale = Vector3(5, 5, 5)
-min_count = 15
-max_count = 20
-lock_rotation = true
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
 
-[node name="Stair_15" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+[node name="Stair_15" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30, 10, -32.5)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(2, 2, 1)
-voxel_scale = Vector3(5, 5, 5)
-max_count = 15
-is_stair_room = true
-lock_rotation = true
-locked_room_rotations = 1
 
-[node name="Stair_16" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+[node name="Stair_16" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, -5, 37.5)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(2, 2, 1)
-voxel_scale = Vector3(5, 5, 5)
-max_count = 15
-is_stair_room = true
-lock_rotation = true
-locked_room_rotations = 1
 
-[node name="Stair_17" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+[node name="Stair_17" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30, 5, -77.5)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(2, 2, 1)
-voxel_scale = Vector3(5, 5, 5)
-max_count = 15
-is_stair_room = true
-lock_rotation = true
-locked_room_rotations = 1
 
-[node name="Stair_18" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+[node name="Stair_18" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, -2.5)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(2, 2, 1)
-voxel_scale = Vector3(5, 5, 5)
-max_count = 15
-is_stair_room = true
-lock_rotation = true
-locked_room_rotations = 1
 
-[node name="Stair_19" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
+[node name="Stair_19" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("5_myu1e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -10, 2.5)
-script = ExtResource("6_0dkfa")
-size_in_voxels = Vector3i(2, 2, 1)
-voxel_scale = Vector3(5, 5, 5)
-max_count = 15
-is_stair_room = true
-lock_rotation = true
-locked_room_rotations = 1
 
-[node name="Corridor_29" type="Node3D" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
+[node name="Corridor_29" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_myk2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -12.5, 40)
-script = ExtResource("7_0q73l")
-room_straight = ExtResource("8_uj0bg")
-room_corner = ExtResource("9_bcdx8")
-room_tjunction = ExtResource("10_hh3t6")
-voxel_scale = Vector3(5, 5, 5)
-metadata/_custom_type_script = "uid://c02cpa7oirtca"
