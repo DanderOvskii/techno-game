@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://brs3xpi7hi383"]
+[gd_scene load_steps=10 format=3 uid="uid://brs3xpi7hi383"]
 
 [ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://scenes/environment/map-generation.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://p3on5fvqt7gb" path="res://testing/exitgame.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dy3pclipcci3c" path="res://testing/player_testing.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bh32su754dosj" path="res://scenes/effects/music_mashine.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cgit36ps1f6kt" path="res://testing/gameplay/curv_test.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://dwimbncs5f4ug" path="res://testing/pixel test.png" id="6_7mycd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -16,16 +18,19 @@ sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
 background_mode = 2
 sky = SubResource("Sky_h2yge")
 ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 3.43
 tonemap_mode = 2
 glow_enabled = true
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_lquwl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1bvp3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
 [node name="PlayerTesting" parent="." groups=["player"] instance=ExtResource("2_0xm2m")]
@@ -35,10 +40,14 @@ run_fov = 120.0
 normal_fov = 100.0
 fov_speed = 10.0
 
-[node name="map-generation" parent="." instance=ExtResource("1_ig7tw")]
-
 [node name="MusicMashine" parent="." instance=ExtResource("3_h2yge")]
 
 [node name="CurvTest" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.288, 72.1927)
 visible = false
+
+[node name="map-generation" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 0, 12.0248, 22.0465)
+texture = ExtResource("6_7mycd")
