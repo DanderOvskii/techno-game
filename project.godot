@@ -21,13 +21,6 @@ config/icon="uid://gweamtnxmepx"
 MusicManager="*res://scripts/music_mashine/music_manager.gd"
 PatternManager="*res://scripts/music_mashine/pattern_manager.gd"
 
-[display]
-
-window/size/mode=2
-window/size/resizable=false
-window/size/borderless=true
-window/stretch/mode="viewport"
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/SimpleDungeons/plugin.cfg")

@@ -13,12 +13,9 @@ hihat = NodePath("hihat")
 
 [node name="kick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_jawi1")
-bus = &"muziek"
 
 [node name="snare" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_s4rbq")
-bus = &"muziek"
 
 [node name="hihat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_pmpy3")
-bus = &"muziek"

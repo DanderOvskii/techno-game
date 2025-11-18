@@ -1,12 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dy3pclipcci3c"]
+[gd_scene load_steps=4 format=3 uid="uid://dy3pclipcci3c"]
 
 [ext_resource type="Script" uid="uid://bni04d7hganph" path="res://testing/CharacterController.gd" id="1_l3nwf"]
 [ext_resource type="Script" uid="uid://uxix2eff0a0i" path="res://scripts/ui/track_worldcurf_camera.gd" id="2_ofbi1"]
-[ext_resource type="Material" uid="uid://bu8efnbsiqf23" path="res://shaders/materials/pixelated_shader_mat.tres" id="3_k3t4a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofbi1"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_ofbi1"]
 
 [node name="PlayerTesting" type="CharacterBody3D"]
 script = ExtResource("1_l3nwf")
@@ -18,10 +15,4 @@ shape = SubResource("CapsuleShape3D_ofbi1")
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972433, -0.293688)
 script = ExtResource("2_ofbi1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera"]
-transform = Transform3D(3.9764, 0, 0, 0, 2.83987, 0, 0, 0, 1, 0, -0.0101451, -0.822609)
-visible = false
-mesh = SubResource("QuadMesh_ofbi1")
-skeleton = NodePath("../..")
-surface_material_override/0 = ExtResource("3_k3t4a")
+curvature_strength = 0.02
