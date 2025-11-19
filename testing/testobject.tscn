@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dot6r1j7g3m5u"]
+
+[ext_resource type="Texture2D" uid="uid://gweamtnxmepx" path="res://gameicon.png" id="1_3nf6u"]
+[ext_resource type="Material" uid="uid://dnga306p5glv8" path="res://shaders/materials/general_material.tres" id="2_x5hox"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_x5hox"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w20l"]
+albedo_texture = ExtResource("1_3nf6u")
+uv1_scale = Vector3(1.895, 1.848, 1.895)
+
+[sub_resource type="SphereMesh" id="SphereMesh_6w20l"]
+
+[node name="Testobject" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_x5hox")
+surface_material_override/0 = SubResource("StandardMaterial3D_6w20l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41546, 0, 0)
+mesh = SubResource("SphereMesh_6w20l")
+surface_material_override/0 = ExtResource("2_x5hox")

@@ -50,3 +50,7 @@ AreaId = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerArea"]
 shape = SubResource("BoxShape3D_ph6dg")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+omni_range = 4096.0
+omni_attenuation = 0.548

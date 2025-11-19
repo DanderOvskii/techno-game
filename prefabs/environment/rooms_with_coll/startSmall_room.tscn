@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmqt801h5p3nj"]
+[gd_scene load_steps=7 format=3 uid="uid://bmqt801h5p3nj"]
 
 [ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ti62s"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_5rjwt"]
 [ext_resource type="PackedScene" uid="uid://cc8ih1f0dc8u2" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_w8t1m"]
 [ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_8246s"]
+[ext_resource type="PackedScene" uid="uid://dot6r1j7g3m5u" path="res://testing/testobject.tscn" id="5_8246s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
 albedo_texture = ExtResource("2_5rjwt")
@@ -40,3 +41,6 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="roomsmall2" parent="." groups=["materials = get_tree().get_nodes_in_group(\"curved_materials\")"] instance=ExtResource("4_8246s")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Testobject" parent="." instance=ExtResource("5_8246s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522135, -0.731868, 4.35945)

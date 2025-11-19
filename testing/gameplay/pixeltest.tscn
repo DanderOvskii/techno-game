@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr6rocdmt0h7l"]
+
+[ext_resource type="PackedScene" uid="uid://bmqt801h5p3nj" path="res://prefabs/environment/rooms_with_coll/startSmall_room.tscn" id="1_x1xhe"]
+
+[node name="Pixeltest" type="Node3D"]
+
+[node name="RoomOne" parent="." instance=ExtResource("1_x1xhe")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+shadow_enabled = true
+distance_fade_enabled = true

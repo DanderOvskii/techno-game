@@ -1,18 +1,14 @@
 shader_type spatial;
+uniform sampler2D albedo_texture : source_color;
 
 #include "res://shaders/fx/curve_world_inc.gdshaderinc"
 #include "res://shaders/fx/animate_texture_inc.gdshaderinc"
+#include "res://shaders/fx/stepped_lighting.gdshaderinc"
+uniform bool CurfOnOf = true;
 
-uniform sampler2D albedo_texture : source_color;
-uniform vec4 albedo_color : source_color = vec4(1.0);
-uniform sampler2D normal_texture : hint_normal;
-uniform sampler2D roughness_texture;
-uniform float metallic : hint_range(0.0, 1.0) = 0.0;
-uniform float roughness : hint_range(0.0, 1.0) = 1.0;
-uniform bool tun_off_curf = true;
 
 void vertex() {
-	if (tun_off_curf != true){
+	if (CurfOnOf){
 		
     // Convert local vertex to world space
     vec4 world_pos = MODEL_MATRIX * vec4(VERTEX, 1.0);
@@ -25,13 +21,13 @@ void vertex() {
 	}
 }
 
+
+
+
 void fragment() {
  	vec2 uv = UV;
     animate_sprite(uv, albedo_texture);
 
     vec4 tex = texture(albedo_texture, uv);
     ALBEDO = tex.rgb;
-    METALLIC = metallic;
-    ROUGHNESS = roughness;
-    NORMAL_MAP = texture(normal_texture, UV).rgb;
 }

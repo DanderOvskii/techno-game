@@ -3,7 +3,7 @@
 extends Camera3D  # or Camera3D if you put it on the camera
 
 @export var woldcurf_shader_path: String = "res://shaders/worldcurf_shader.shader"	
-@export_range(-0.02,0.02,0.001) var curvature_strength: float = 0.005
+@export_range(-0.02,0.02,0.001) var curvature_strength: float = 0.0
 
 @onready var materials := []  # we'll fill this later
 

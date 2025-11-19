@@ -5,7 +5,6 @@ signal player_entered
 @export var AreaId : int
 
 func _ready():
-	print("TriggerArea ready")
 	body_entered.connect(_on_body_entered)
 
 

@@ -33,6 +33,7 @@ import/blender/enabled=false
 
 player=""
 "materials = get_tree().get_nodes_in_group(\"curved_materials\")"=""
+music_areas=""
 
 [input]
 
