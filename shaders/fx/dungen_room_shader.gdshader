@@ -9,7 +9,7 @@ uniform bool CurfOnOf = true;
 
 void vertex() {
 	if (CurfOnOf){
-		
+	vec3 orig_normal = NORMAL;
     // Convert local vertex to world space
     vec4 world_pos = MODEL_MATRIX * vec4(VERTEX, 1.0);
     
@@ -18,7 +18,9 @@ void vertex() {
     
     // Convert back to local space
     VERTEX = (inverse(MODEL_MATRIX) * world_pos).xyz;
+    NORMAL = orig_normal;
 	}
+	
 }
 
 

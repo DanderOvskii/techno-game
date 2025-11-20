@@ -26,16 +26,12 @@ script = ExtResource("1_lquwl")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1bvp3")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
 [node name="map-generation" parent="." instance=ExtResource("1_ig7tw")]
 
 [node name="MusicMashine" parent="." instance=ExtResource("3_h2yge")]
 
 [node name="PlayerTesting" parent="." instance=ExtResource("2_0xm2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.7554, 80.22)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.208, 80)
 SPEED = 15.0
 run_fov = 120.0
 normal_fov = 100.0
