@@ -7,6 +7,7 @@
 render_priority = 0
 shader = ExtResource("1_q04ep")
 shader_parameter/albedo_texture = ExtResource("2_oix1h")
+shader_parameter/emission_strength = 0.0
 shader_parameter/curvature_strength = 0.0
 shader_parameter/camera_position = Vector3(0, 14.1804, 79.7063)
 shader_parameter/wrap = 0.0
@@ -14,4 +15,5 @@ shader_parameter/cuts = 3
 shader_parameter/SteppedLightOnOf = true
 shader_parameter/use_attenuation = true
 shader_parameter/steepness = 3.702
+shader_parameter/emmisionOnOf = false
 shader_parameter/CurfOnOf = true

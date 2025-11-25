@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmqt801h5p3nj"]
+[gd_scene load_steps=9 format=3 uid="uid://bmqt801h5p3nj"]
 
 [ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ti62s"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_5rjwt"]
 [ext_resource type="PackedScene" uid="uid://cc8ih1f0dc8u2" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_w8t1m"]
 [ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_8246s"]
 [ext_resource type="PackedScene" uid="uid://dot6r1j7g3m5u" path="res://testing/testobject.tscn" id="5_8246s"]
+[ext_resource type="Script" uid="uid://7f7nl4kx2buo" path="res://scripts/core/spawnobjects.gd" id="6_g18ij"]
 [ext_resource type="PackedScene" uid="uid://b8b6nhymcwrq" path="res://assets/models/props/lamp/lamp-scene.tscn" id="6_peyg6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
@@ -46,5 +47,12 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 [node name="Testobject" parent="." instance=ExtResource("5_8246s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522135, -0.731868, 4.35945)
 
-[node name="Lamp-scene" parent="." instance=ExtResource("6_peyg6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25329, 0)
+[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("spawnpoints")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.420268, 0)
+script = ExtResource("6_g18ij")
+spawnpoints = [NodePath("../spawnpoint")]
+spawnobjects = Array[PackedScene]([ExtResource("6_peyg6"), ExtResource("5_8246s")])
+spawnchange = Array[float]([50.0, 50.0])
+
+[node name="spawnpoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24826, 0)

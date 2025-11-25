@@ -6,28 +6,24 @@
 [ext_resource type="PackedScene" uid="uid://bh32su754dosj" path="res://scenes/effects/music_mashine.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dot6r1j7g3m5u" path="res://testing/testobject.tscn" id="6_7mycd"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0xm2m"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
-[sub_resource type="Sky" id="Sky_h2yge"]
-sky_material = SubResource("ProceduralSkyMaterial_0xm2m")
+[sub_resource type="Sky" id="Sky_7mycd"]
+sky_material = SubResource("ProceduralSkyMaterial_lquwl")
 
-[sub_resource type="Environment" id="Environment_1bvp3"]
+[sub_resource type="Environment" id="Environment_272bh"]
 background_mode = 2
-background_energy_multiplier = 0.62
-sky = SubResource("Sky_h2yge")
-ambient_light_energy = 1.57
+sky = SubResource("Sky_7mycd")
 tonemap_mode = 2
 glow_enabled = true
-volumetric_fog_density = 0.0799
-volumetric_fog_emission_energy = 0.0
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_lquwl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1bvp3")
+environment = SubResource("Environment_272bh")
 
 [node name="map-generation" parent="." instance=ExtResource("1_ig7tw")]
 
