@@ -5,5 +5,5 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_8oiou")
-shader_parameter/Pixel_Size = 2
+shader_parameter/Pixel_Size = 1
 shader_parameter/pixelEffectOnOff = true

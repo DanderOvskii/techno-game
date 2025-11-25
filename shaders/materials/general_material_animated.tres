@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dnga306p5glv8"]
+
+[ext_resource type="Shader" uid="uid://wbn2gmfhyo63" path="res://shaders/fx/dungen_room_shader_animated.gdshader" id="1_20utu"]
+[ext_resource type="Texture2D" uid="uid://d4fr3m0o2rgwk" path="res://assets/textures/environment/atlas.png" id="2_a2kke"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_20utu")
+shader_parameter/albedo_texture = ExtResource("2_a2kke")
+shader_parameter/curvature_strength = 0.0
+shader_parameter/camera_position = Vector3(0, 14.1804, 79.7063)
+shader_parameter/frames = 4
+shader_parameter/frame_offset = 0.0
+shader_parameter/bpm = 0.0
+shader_parameter/wrap = 0.0
+shader_parameter/cuts = 3
+shader_parameter/SteppedLightOnOf = true
+shader_parameter/use_attenuation = true
+shader_parameter/steepness = 1.0
+shader_parameter/CurfOnOf = true

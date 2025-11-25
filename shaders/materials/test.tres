@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://do6hqved6o8i6"]
+
+[ext_resource type="Texture2D" uid="uid://bvmu1kmt3uhm3" path="res://assets/textures/environment/lamp_lamp.png" id="1_w7gxr"]
+
+[resource]
+albedo_texture = ExtResource("1_w7gxr")
+emission_enabled = true

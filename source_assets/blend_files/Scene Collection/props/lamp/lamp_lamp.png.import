@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drlq6gexbtoub"
-path="res://.godot/imported/halway-colonly_maptexture.png-d7e4e26cb5d270a8d87577c16d30b52c.ctex"
+uid="uid://bd61r1qetphhp"
+path.s3tc="res://.godot/imported/lamp_lamp.png-3637afca25197f6fd5d4fcae478b6e5c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "4839b702cd4790f8e965aacc5b388fda"
+"md5": "3ae178d22b0f6dcb8cfa5bf76e9a4775"
 }
 
 [deps]
 
-source_file="res://assets/models/environment/maptiles-with-collision/main/halway/halway-colonly_maptexture.png"
-dest_files=["res://.godot/imported/halway-colonly_maptexture.png-d7e4e26cb5d270a8d87577c16d30b52c.ctex"]
+source_file="res://source_assets/blend_files/Scene Collection/props/lamp/lamp_lamp.png"
+dest_files=["res://.godot/imported/lamp_lamp.png-3637afca25197f6fd5d4fcae478b6e5c.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -34,4 +35,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

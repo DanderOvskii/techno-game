@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bps4e5otfivdx"
-path="res://.godot/imported/halway-colonly.glb-33d4636e14d482fe8119b2fa1652de3c.scn"
+uid="uid://b65kho6g1flt5"
+path="res://.godot/imported/lamp.glb-78d54e85e90ac5ec66f52cc7d8e19913.scn"
 
 [deps]
 
-source_file="res://assets/models/environment/maptiles-with-collision/main/halway/halway-colonly.glb"
-dest_files=["res://.godot/imported/halway-colonly.glb-33d4636e14d482fe8119b2fa1652de3c.scn"]
+source_file="res://assets/models/props/lamp/lamp.glb"
+dest_files=["res://.godot/imported/lamp.glb-78d54e85e90ac5ec66f52cc7d8e19913.scn"]
 
 [params]
 
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material.002": {
+"use_external/enabled": true,
+"use_external/path": "uid://crn1leyamlpg8"
+}
+}
+}
 gltf/naming_version=1
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1

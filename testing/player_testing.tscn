@@ -28,7 +28,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972433, -0.293688)
 script = ExtResource("2_ofbi1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera"]
-visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_k3t4a")
 surface_material_override/0 = ExtResource("3_k3t4a")

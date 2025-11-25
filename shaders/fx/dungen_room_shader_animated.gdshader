@@ -2,6 +2,7 @@ shader_type spatial;
 uniform sampler2D albedo_texture : source_color,filter_nearest;
 
 #include "res://shaders/fx/curve_world_inc.gdshaderinc"
+#include "res://shaders/fx/animate_texture_inc.gdshaderinc"
 #include "res://shaders/fx/stepped_lighting.gdshaderinc"
 uniform bool CurfOnOf = true;
 
@@ -27,6 +28,7 @@ void vertex() {
 
 void fragment() {
  	vec2 uv = UV;
+    animate_sprite(uv, albedo_texture);
 
     vec4 tex = texture(albedo_texture, uv);
     ALBEDO = tex.rgb;

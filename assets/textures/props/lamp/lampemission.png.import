@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl2r3bhy2bnge"
-path="res://.godot/imported/halway_maptexture.png-b04761c54a8d7b591bfbb747b0c4b7dc.ctex"
+uid="uid://lod4481chyj7"
+path="res://.godot/imported/lampemission.png-f1f7197ffa03c8c75da37f4e5c09cddc.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "4839b702cd4790f8e965aacc5b388fda"
 }
 
 [deps]
 
-source_file="res://assets/models/environment/maptiles-with-collision/main/halway/halway_maptexture.png"
-dest_files=["res://.godot/imported/halway_maptexture.png-b04761c54a8d7b591bfbb747b0c4b7dc.ctex"]
+source_file="res://assets/textures/props/lamp/lampemission.png"
+dest_files=["res://.godot/imported/lampemission.png-f1f7197ffa03c8c75da37f4e5c09cddc.ctex"]
 
 [params]
 
@@ -24,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
