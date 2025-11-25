@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_8246s"]
 [ext_resource type="PackedScene" uid="uid://dot6r1j7g3m5u" path="res://testing/testobject.tscn" id="5_8246s"]
 [ext_resource type="Script" uid="uid://7f7nl4kx2buo" path="res://scripts/core/spawnobjects.gd" id="6_g18ij"]
-[ext_resource type="PackedScene" uid="uid://b8b6nhymcwrq" path="res://assets/models/props/lamp/lamp-scene.tscn" id="6_peyg6"]
+[ext_resource type="PackedScene" uid="uid://b8b6nhymcwrq" path="res://prefabs/props/lamp-scene.tscn" id="7_g18ij"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
 albedo_texture = ExtResource("2_5rjwt")
@@ -47,12 +47,11 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 [node name="Testobject" parent="." instance=ExtResource("5_8246s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522135, -0.731868, 4.35945)
 
-[node name="Node3D" type="Node3D" parent="." node_paths=PackedStringArray("spawnpoints")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.420268, 0)
+[node name="objectspawner" type="Node3D" parent="." node_paths=PackedStringArray("spawnpoints")]
 script = ExtResource("6_g18ij")
 spawnpoints = [NodePath("../spawnpoint")]
-spawnobjects = Array[PackedScene]([ExtResource("6_peyg6"), ExtResource("5_8246s")])
-spawnchange = Array[float]([50.0, 50.0])
+spawnobjects = Array[PackedScene]([ExtResource("7_g18ij"), ExtResource("5_8246s")])
+spawnchange = Array[float]([100.0, 50.0])
 
 [node name="spawnpoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24826, 0)

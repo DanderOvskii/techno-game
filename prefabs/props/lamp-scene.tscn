@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8b6nhymcwrq"]
+[gd_scene load_steps=3 format=3 uid="uid://b8b6nhymcwrq"]
 
+[ext_resource type="Script" uid="uid://cab6ibnndcwp1" path="res://scripts/world/move_object_cuve.gd" id="1_br1af"]
 [ext_resource type="PackedScene" uid="uid://b65kho6g1flt5" path="res://assets/models/props/lamp/lamp.glb" id="1_i4wip"]
 
 [node name="Lamp-scene" type="Node3D"]
@@ -12,3 +13,4 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.
 light_energy = 7.095
 spot_range = 11.899
 spot_angle = 78.45
+script = ExtResource("1_br1af")
