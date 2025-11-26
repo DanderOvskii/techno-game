@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy3pclipcci3c"]
+[gd_scene load_steps=8 format=3 uid="uid://dy3pclipcci3c"]
 
 [ext_resource type="Script" uid="uid://bni04d7hganph" path="res://testing/CharacterController.gd" id="1_l3nwf"]
 [ext_resource type="Script" uid="uid://uxix2eff0a0i" path="res://scripts/ui/track_worldcurf_camera.gd" id="2_ofbi1"]
 [ext_resource type="Material" uid="uid://bswre08ys8d4" path="res://shaders/materials/pixelated_shader_mat.tres" id="3_k3t4a"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofbi1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k3t4a"]
+height = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_k3t4a"]
 
@@ -15,9 +18,13 @@ size = Vector2(2, 2)
 [node name="PlayerTesting" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_l3nwf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="walkCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0.14)
 shape = SubResource("CapsuleShape3D_ofbi1")
+
+[node name="slideCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -1, 0.14)
+shape = SubResource("CapsuleShape3D_k3t4a")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0.14)
