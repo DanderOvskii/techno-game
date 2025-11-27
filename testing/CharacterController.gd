@@ -1,19 +1,29 @@
 extends CharacterBody3D
 
 @export_group("Character Speeds")
-@export var SPEED: float = 6.5
-@export var slide_speed: float = 14.0
-@export var slide_lerp_speed := 10.0  
 @export var JUMP_VELOCITY: float = 4.5
+@export_range(1.0,20.0) var tilt_speed: float = 10.0
+@export_range(1.0,20.0) var fov_speed: float = 10.0
+
+@export_group("walk-run")
+@export var SPEED: float = 4
+@export var normal_fov: float = 100.0
+@export var runSpeed: float = 9.5
+@export var run_fov: float = 120.0
+@export_range(1.0,10.0) var transition_speed: float = 6.0
+@export_range(1.0,45.0) var tilt_amount: float = 5.0
+
+@export_group("sliding")
+@export var slide_speed: float = 16.0
+@export var slide_lerp_speed: float = 10.0  
+@export var slide_duration: float = 2.0
+@export var slide_height: float = 1.0  
+@export var slide_tilt = -12.0
+@export_range(0.0,1.0)var slide_steering:float=0.4
 
 @export_group("Character Settings")
 @export var max_jumps: int = 2  # Max aantal sprongen
 @export var salto_duration: float = 0.6  # Hoe lang de salto duurt
-@export var run_fov: float = 140.0
-@export var normal_fov: float = 85.0
-@export var fov_speed: float = 5.0
-@export var slide_duration: float = 0.6
-@export var slide_height: float = 1.0  
 
 
 @export_group("Controls")
@@ -27,7 +37,6 @@ extends CharacterBody3D
 
 var is_sliding: bool = false
 var slide_timer: float = 0.0
-var slide_tilt = 0.0
 
 
 var jump_count: int = 0  
@@ -37,6 +46,10 @@ var salto_timer: float = 0.0
 
 var target_fov = normal_fov
 var target_tilt = 0.0
+var target_speed: float
+var slide_direction: Vector3 = Vector3.ZERO
+
+var current_speed: float
 var movement_tilt = 0.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var camera_original_height:float
@@ -44,6 +57,7 @@ var camera_height_target: float
 @onready var camera = $Camera
 @onready var capsule_shape = $walkCollision as CollisionShape3D 
 @onready var slide_capsule_shape = $slideCollision as CollisionShape3D 
+
 
 
 func _ready():
@@ -64,22 +78,19 @@ func _input(event):
 
 
 func _physics_process(delta):
+	current_speed = move_toward(current_speed,target_speed, transition_speed*10*delta)
+	movement_tilt = lerp(movement_tilt, target_tilt, delta * tilt_speed)
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	if is_on_floor():
 		jump_count = 0
-		
+	run()
 	jump(delta)
 	salto(delta)
 
-	if Input.is_action_pressed(SPRINT):
-		target_fov = run_fov
-		SPEED = 9.5
-	else:
-		target_fov = normal_fov
-		SPEED = 7.5
 
-	camera.fov = move_toward(camera.fov, target_fov, fov_speed * 30 * delta)
+
+	camera.fov = move_toward(camera.fov, target_fov, fov_speed *10* delta)
 
 	
 	slide(delta)
@@ -88,16 +99,16 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction and not is_sliding:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * current_speed
+		velocity.z = direction.z * current_speed
 	elif not is_sliding:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-	
+		target_speed = 0.0
+		velocity.x = move_toward(velocity.x, 0, transition_speed *10* delta)
+		velocity.z =  move_toward(velocity.z, 0, transition_speed *10* delta)
 	if not is_sliding:
-		movement_tilt = input_dir.x * 5.0
+		target_tilt = input_dir.x * tilt_amount
 	
-	
+	camera.rotation_degrees.z = movement_tilt
 	move_and_slide()
 
 func jump(delta):
@@ -125,40 +136,51 @@ func salto(delta):
 		camera.rotation_degrees.z = salto_angle
 
 func slide(delta):
-	var forward = -transform.basis.z
 	var slide_progress = slide_timer / slide_duration
-	var current_speed = lerp(slide_speed, 10.0, slide_progress)
+	var current_slide_speed = lerp(slide_speed, 0.0, slide_progress)
 	camera.position.y = lerp(camera.position.y, camera_height_target, delta * slide_lerp_speed)
 
-	slide_tilt = lerp(slide_tilt, target_tilt, delta * 8)
-
-	camera.rotation_degrees.z = slide_tilt
-
 	if Input.is_action_just_pressed("slide") and is_on_floor() and not is_sliding and Input.is_action_pressed("sprint"):
+		target_tilt = slide_tilt
 		is_sliding = true
 		slide_timer = 0.0
-		velocity.x = forward.x * slide_speed
-		velocity.z = forward.z * slide_speed
 		velocity.y = -5.0
-		target_tilt = -12.0
 		capsule_shape.disabled = true
 		slide_capsule_shape.disabled = false
 		camera_height_target = camera_original_height - slide_height
+		var player_forward = -transform.basis.z
+		player_forward.y = 0
+		slide_direction= player_forward
 		
 
 	if is_sliding:
 		slide_timer += delta
-		velocity.x = forward.x * current_speed
-		velocity.z = forward.z * current_speed
+
+		var cam_forward = -camera.global_transform.basis.z
+		cam_forward.y = 0
+		cam_forward = cam_forward.normalized()
+
+
+		var slide_dir = (slide_direction.lerp(cam_forward,slide_steering)).normalized()
+
+		velocity.x = slide_dir.x * current_slide_speed
+		velocity.z = slide_dir.z * current_slide_speed
 
 		if slide_timer >= slide_duration or Input.is_action_just_released("slide"):
 			is_sliding = false
-			target_tilt = movement_tilt
+			target_tilt = 0.0
 			capsule_shape.disabled = false
 			slide_capsule_shape.disabled = true
 			camera_height_target = camera_original_height
+			current_speed = current_slide_speed
 
-	
+func run():
+	if Input.is_action_pressed(SPRINT):
+		target_fov = run_fov
+		target_speed = runSpeed
+	else:
+		target_fov = normal_fov
+		target_speed = SPEED  # Replace with function body.
 
 
 
