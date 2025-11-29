@@ -1,4 +1,10 @@
 extends CharacterBody3D
+@onready var camera = $Camera
+@onready var camera_original_height:float = camera.transform.origin.y
+@onready var capsule = $walkCollision as CollisionShape3D 
+@onready var capsule_shape = capsule.shape as CapsuleShape3D
+@onready var original_capsule_shap_height = capsule_shape.height
+@onready var slide_move_height: float = (original_capsule_shap_height - slide_height) / 2
 
 @export_group("Character Speeds")
 @export var JUMP_VELOCITY: float = 4.5
@@ -18,7 +24,7 @@ extends CharacterBody3D
 @export var slide_lerp_speed: float = 10.0  
 @export var slide_duration: float = 2.0
 @export var slide_height: float = 1.0  
-@export var slide_tilt = -12.0
+@export_range(-45.0,45.0,1.0) var slide_tilt:float = -12.0
 @export_range(0.0,1.0)var slide_steering:float=0.4
 
 @export_group("Character Settings")
@@ -27,7 +33,7 @@ extends CharacterBody3D
 
 
 @export_group("Controls")
-@export var sensivity: float = 0.3
+@export_range(0.1,1) var sensivity: float = 0.3
 @export var LEFT : String = "left"
 @export var RIGHT : String = "right"
 @export var UP : String = "up"
@@ -52,11 +58,7 @@ var slide_direction: Vector3 = Vector3.ZERO
 var current_speed: float
 var movement_tilt = 0.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var camera_original_height:float
 var camera_height_target: float
-@onready var camera = $Camera
-@onready var capsule_shape = $walkCollision as CollisionShape3D 
-@onready var slide_capsule_shape = $slideCollision as CollisionShape3D 
 
 
 
@@ -64,9 +66,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	capsule_shape.disabled = false
-	slide_capsule_shape.disabled = true
-	camera_original_height = camera.transform.origin.y
 	camera_height_target = camera_original_height
 
 
@@ -86,7 +85,7 @@ func _physics_process(delta):
 		jump_count = 0
 	run()
 	jump(delta)
-	salto(delta)
+	
 
 
 
@@ -117,12 +116,14 @@ func jump(delta):
 			# Eerste sprong normaal
 			velocity.y = JUMP_VELOCITY
 			jump_count = 1
+			
 		elif jump_count < max_jumps:
 			# Tweede sprong: salto achteruit (alleen voor de sier)
 			velocity.y = JUMP_VELOCITY  # vertical boost
 			salto_timer = 0.0
 			saltoing = true
 			jump_count += 1
+			salto(delta)
 
 
 func salto(delta):
@@ -144,10 +145,9 @@ func slide(delta):
 		target_tilt = slide_tilt
 		is_sliding = true
 		slide_timer = 0.0
-		velocity.y = -5.0
-		capsule_shape.disabled = true
-		slide_capsule_shape.disabled = false
-		camera_height_target = camera_original_height - slide_height
+		capsule.position.y = -slide_move_height
+		capsule_shape.height = capsule_shape.height - slide_height
+		camera_height_target = camera_original_height - slide_move_height
 		var player_forward = -transform.basis.z
 		player_forward.y = 0
 		slide_direction= player_forward
@@ -155,7 +155,6 @@ func slide(delta):
 
 	if is_sliding:
 		slide_timer += delta
-
 		var cam_forward = -camera.global_transform.basis.z
 		cam_forward.y = 0
 		cam_forward = cam_forward.normalized()
@@ -169,8 +168,8 @@ func slide(delta):
 		if slide_timer >= slide_duration or Input.is_action_just_released("slide"):
 			is_sliding = false
 			target_tilt = 0.0
-			capsule_shape.disabled = false
-			slide_capsule_shape.disabled = true
+			capsule.position.y = 0.0
+			capsule_shape.height = capsule_shape.height + slide_height
 			camera_height_target = camera_original_height
 			current_speed = current_slide_speed
 

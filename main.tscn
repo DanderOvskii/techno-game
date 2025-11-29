@@ -35,6 +35,7 @@ environment = SubResource("Environment_272bh")
 
 [node name="PlayerTesting" parent="." instance=ExtResource("2_0xm2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9155e-05, 13.208, 79.9819)
+slide_height = 1.5
 
 [node name="Testobject" parent="." instance=ExtResource("6_7mycd")]
 transform = Transform3D(-1.61, 0, 1.40751e-07, 0, 1.61, 0, -1.40751e-07, 0, -1.61, 0.341117, 12.833, 59.9312)
