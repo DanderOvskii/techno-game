@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3o6qcy14vjq2"]
+
+[ext_resource type="PackedScene" uid="uid://cchpc3cgphx1v" path="res://assets/models/props/lampBroken/lampBroke.glb" id="1_hwm5m"]
+
+[node name="LampBroken" type="Node3D"]
+
+[node name="lampBroke2" parent="." instance=ExtResource("1_hwm5m")]
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 0, 0, 0)

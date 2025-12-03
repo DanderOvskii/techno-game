@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://72jsquq43g6v"]
+
+[ext_resource type="Shader" uid="uid://dj2ptyyx2x75f" path="res://shaders/fx/dungen_room_shader.gdshader" id="1_b5apc"]
+[ext_resource type="Texture2D" uid="uid://l00rrck8ur2q" path="res://assets/textures/props/lampbroken/lampbroke.png" id="2_g584k"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_b5apc")
+shader_parameter/albedo_texture = ExtResource("2_g584k")
+shader_parameter/emission_strength = 0.0
+shader_parameter/curvature_strength = 0.0
+shader_parameter/camera_position = Vector3(0, 14.18, 79.688)
+shader_parameter/wrap = 0.0
+shader_parameter/cuts = 3
+shader_parameter/SteppedLightOnOf = true
+shader_parameter/use_attenuation = true
+shader_parameter/steepness = 1.0
+shader_parameter/emmisionOnOf = false
+shader_parameter/CurfOnOf = true

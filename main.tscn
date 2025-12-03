@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://brs3xpi7hi383"]
+[gd_scene load_steps=9 format=3 uid="uid://brs3xpi7hi383"]
 
 [ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://scenes/environment/map-generation.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cle4w0c1gbp06" path="res://testing/exit game.gd" id="1_lquwl"]
@@ -15,13 +15,27 @@ sky_material = SubResource("ProceduralSkyMaterial_lquwl")
 
 [sub_resource type="Environment" id="Environment_272bh"]
 background_mode = 2
+background_energy_multiplier = 0.62
 sky = SubResource("Sky_7mycd")
 tonemap_mode = 2
+tonemap_exposure = 0.88
+ssao_enabled = true
+ssao_radius = 1.13
+ssao_intensity = 3.11
+ssil_radius = 8.01
+ssil_intensity = 2.15
+sdfgi_read_sky_light = false
+sdfgi_bounce_feedback = 1.24
 glow_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
+glow_intensity = 2.06
+glow_strength = 0.56
+glow_bloom = 0.26
+glow_blend_mode = 0
+glow_hdr_threshold = 1.1
+glow_hdr_scale = 1.43
+adjustment_enabled = true
+adjustment_brightness = 1.13
+adjustment_contrast = 1.12
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_lquwl")
@@ -40,13 +54,3 @@ slide_height = 1.5
 [node name="Testobject" parent="." instance=ExtResource("6_7mycd")]
 transform = Transform3D(-1.61, 0, 1.40751e-07, 0, 1.61, 0, -1.40751e-07, 0, -1.61, 0.341117, 12.833, 59.9312)
 visible = false
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.2609, 75.6284)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_lquwl")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.589748, 0)
-mesh = SubResource("BoxMesh_lquwl")

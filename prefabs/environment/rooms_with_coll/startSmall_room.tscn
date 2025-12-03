@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cc8ih1f0dc8u2" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_w8t1m"]
 [ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_8246s"]
 [ext_resource type="PackedScene" uid="uid://dot6r1j7g3m5u" path="res://testing/testobject.tscn" id="5_8246s"]
-[ext_resource type="Script" uid="uid://7f7nl4kx2buo" path="res://scripts/core/spawnobjects.gd" id="6_g18ij"]
-[ext_resource type="PackedScene" uid="uid://b8b6nhymcwrq" path="res://prefabs/props/lamp-scene.tscn" id="7_g18ij"]
+[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/lamps-random-spawn/lamps-random-spwan.tscn" id="6_g18ij"]
+[ext_resource type="PackedScene" uid="uid://3o6qcy14vjq2" path="res://prefabs/props/lampBroken/lampBroken-scnene.tscn" id="8_3213w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
 albedo_texture = ExtResource("2_5rjwt")
@@ -47,11 +47,8 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 [node name="Testobject" parent="." instance=ExtResource("5_8246s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522135, -0.731868, 4.35945)
 
-[node name="objectspawner" type="Node3D" parent="." node_paths=PackedStringArray("spawnpoints")]
-script = ExtResource("6_g18ij")
-spawnpoints = [NodePath("../spawnpoint")]
-spawnobjects = Array[PackedScene]([ExtResource("7_g18ij"), ExtResource("5_8246s")])
-spawnchange = Array[float]([100.0, 50.0])
+[node name="Lamps-random-spwan" parent="." instance=ExtResource("6_g18ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26341, 0)
 
-[node name="spawnpoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24826, 0)
+[node name="LampBroken" parent="." instance=ExtResource("8_3213w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601, -6.81837)

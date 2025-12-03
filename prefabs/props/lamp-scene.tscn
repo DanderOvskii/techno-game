@@ -10,7 +10,16 @@ transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0, 
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.237871, 0)
+visible = false
 light_energy = 7.095
 spot_range = 11.899
 spot_angle = 78.45
+script = ExtResource("1_br1af")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.526, 0)
+light_color = Color(0.982, 1, 0.64, 1)
+shadow_enabled = true
+omni_range = 8.925
+omni_attenuation = 0.08
 script = ExtResource("1_br1af")

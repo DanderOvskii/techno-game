@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4ejef3s2kf3n"]
+[gd_scene load_steps=4 format=3 uid="uid://b4ejef3s2kf3n"]
 
-[ext_resource type="PackedScene" uid="uid://crdubp0lc5ga6" path="res://assets/models/environment/maptiles-with-collision/main/tsection/tsection-colonly.glb" id="1_wnfq2"]
-[ext_resource type="PackedScene" uid="uid://bcn1jaqxnyweg" path="res://assets/models/environment/maptiles-with-collision/main/tsection/tsection.glb" id="2_2t6gu"]
+[ext_resource type="PackedScene" uid="uid://dkmsuaelidsij" path="res://assets/models/environment/maptiles-with-collision/main/tsection/tsection-colonly.glb" id="1_wnfq2"]
+[ext_resource type="PackedScene" uid="uid://cnojljx1ujap0" path="res://assets/models/environment/maptiles-with-collision/main/tsection/tsection.glb" id="2_2t6gu"]
+[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/lamps-random-spawn/lamps-random-spwan.tscn" id="3_wcck6"]
 
 [node name="Halway-t" type="Node3D"]
 
@@ -10,3 +11,6 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="tsection2" parent="." instance=ExtResource("2_2t6gu")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Lamps-random-spwan" parent="." instance=ExtResource("3_wcck6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.263, 0)

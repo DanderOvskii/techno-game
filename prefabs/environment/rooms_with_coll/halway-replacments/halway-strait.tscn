@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://33s65hpx6fj8"]
+[gd_scene load_steps=4 format=3 uid="uid://33s65hpx6fj8"]
 
 [ext_resource type="PackedScene" uid="uid://bps4e5otfivdx" path="res://assets/models/environment/maptiles-with-collision/main/halway/halway-colonly.glb" id="1_ch170"]
 [ext_resource type="PackedScene" uid="uid://b055kyl6fonif" path="res://assets/models/environment/maptiles-with-collision/main/halway/halway.glb" id="2_1fy0y"]
+[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/lamps-random-spawn/lamps-random-spwan.tscn" id="3_1fy0y"]
 
 [node name="Halway-strait" type="Node3D"]
 
@@ -10,3 +11,6 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="halway2" parent="." instance=ExtResource("2_1fy0y")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Lamps-random-spwan" parent="." instance=ExtResource("3_1fy0y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.263, 0)
