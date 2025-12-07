@@ -12,15 +12,15 @@ void vertex() {
 	vec3 orig_normal = NORMAL;
     // Convert local vertex to world space
     vec4 world_pos = MODEL_MATRIX * vec4(VERTEX, 1.0);
-    
+
     // Apply world curvature
     world_pos.xyz = apply_world_curvature(world_pos.xyz);
-    
+
     // Convert back to local space
     VERTEX = (inverse(MODEL_MATRIX) * world_pos).xyz;
     NORMAL = orig_normal;
 	}
-	
+
 }
 
 

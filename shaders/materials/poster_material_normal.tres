@@ -1,15 +1,15 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://7djr6f5owkse"]
 
 [ext_resource type="Shader" uid="uid://wbn2gmfhyo63" path="res://shaders/fx/dungen_room_shader_animated.gdshader" id="1_hhwvk"]
-[ext_resource type="Texture2D" uid="uid://c5m5wbcwrnvk6" path="res://assets/textures/props/posters/pixilart-sprite.png" id="2_6nuo5"]
+[ext_resource type="Texture2D" uid="uid://f6p6lm0738r2" path="res://assets/textures/props/posters/pixilart-sprite (1).png" id="2_hhwvk"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_hhwvk")
-shader_parameter/albedo_texture = ExtResource("2_6nuo5")
+shader_parameter/albedo_texture = ExtResource("2_hhwvk")
 shader_parameter/curvature_strength = 0.0
 shader_parameter/camera_position = Vector3(-7.9155e-05, 14.1804, 79.6882)
-shader_parameter/frames = 32
+shader_parameter/frames = 40
 shader_parameter/frame_offset = 0.0
 shader_parameter/bpm = 0.0
 shader_parameter/playbackSecondbBeat = true

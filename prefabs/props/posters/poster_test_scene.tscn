@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://biege3vwvrfsu"]
+
+[ext_resource type="PackedScene" uid="uid://bry3mkucxeblf" path="res://assets/models/props/poster/poster.glb" id="1_kxg84"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kxg84"]
+size = Vector3(0.025, 1, 1)
+
+[node name="PosterNomralScene" type="Node3D"]
+
+[node name="poster" parent="." instance=ExtResource("1_kxg84")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025427, 0, 0)
+mesh = SubResource("BoxMesh_kxg84")

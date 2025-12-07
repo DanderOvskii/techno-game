@@ -11,7 +11,7 @@
 script = ExtResource("1_ln088")
 spawnpoints = [NodePath("../spawnpoint")]
 spawnobjects = Array[PackedScene]([ExtResource("2_ys4pl"), ExtResource("3_4gkg5"), ExtResource("4_s0jso")])
-spawnchange = Array[float]([100.0, 25.0, 200.0])
+spawnchange = Array[float]([100.0, 25.0, 25.0])
 spawn_object_editor = true
 
 [node name="spawnpoint" type="Node3D" parent="."]

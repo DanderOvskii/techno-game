@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfjgucwhhhaqj"]
+[gd_scene load_steps=4 format=3 uid="uid://dfjgucwhhhaqj"]
 
 [ext_resource type="Script" uid="uid://7f7nl4kx2buo" path="res://scripts/core/spawnobjects.gd" id="1_wiwpv"]
 [ext_resource type="PackedScene" uid="uid://dth3tpr7aq4qq" path="res://prefabs/props/posters/poster_nomral_scene.tscn" id="2_4hh4n"]
+[ext_resource type="PackedScene" uid="uid://biege3vwvrfsu" path="res://prefabs/props/posters/poster_test_scene.tscn" id="3_4hh4n"]
 
 [node name="Posters-random-spawn" type="Node3D"]
 
 [node name="objectspawner" type="Node3D" parent="." node_paths=PackedStringArray("spawnpoints")]
 script = ExtResource("1_wiwpv")
 spawnpoints = [NodePath("../spawnpoint"), NodePath("../spawnpoint2")]
-spawnobjects = Array[PackedScene]([ExtResource("2_4hh4n")])
-spawnchange = Array[float]([100.0])
+spawnobjects = Array[PackedScene]([ExtResource("2_4hh4n"), ExtResource("3_4hh4n")])
+spawnchange = Array[float]([100.0, 100.0])
 spawn_object_editor = true
 
 [node name="spawnpoint" type="Node3D" parent="."]

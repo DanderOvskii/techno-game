@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn02hrwpikkip"]
+[gd_scene load_steps=11 format=3 uid="uid://cn02hrwpikkip"]
 
 [ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ichts"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_xr2hu"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_p0oee"]
 [ext_resource type="Script" uid="uid://citydhedft4tn" path="res://scripts/music_mashine/triggererea.gd" id="5_12uep"]
 [ext_resource type="Script" uid="uid://cab6ibnndcwp1" path="res://scripts/world/move_object_cuve.gd" id="6_ph6dg"]
+[ext_resource type="PackedScene" uid="uid://dfjgucwhhhaqj" path="res://scenes/props/random object spawners/posters-random-spawn.tscn" id="7_dxv8d"]
+[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/random object spawners/lamps-random-spwan.tscn" id="8_f4rov"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
 albedo_texture = ExtResource("2_xr2hu")
@@ -60,3 +62,37 @@ shadow_enabled = true
 omni_range = 8.925
 omni_attenuation = 0.08
 script = ExtResource("6_ph6dg")
+
+[node name="Posters-random-spawn" parent="." instance=ExtResource("7_dxv8d")]
+
+[node name="objectspawner" parent="Posters-random-spawn" index="0" node_paths=PackedStringArray("spawnpoints")]
+spawnpoints = [NodePath("../spawnpoint"), NodePath("../spawnpoint2"), NodePath("../spawnpoint3")]
+
+[node name="spawnpoint" parent="Posters-random-spawn" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.2122, 0, 0)
+
+[node name="spawnpoint2" parent="Posters-random-spawn" index="2"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.2, 0, 5)
+
+[node name="spawnpoint3" type="Node3D" parent="Posters-random-spawn"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.2, 0, -5)
+
+[node name="Posters-random-spawn2" parent="." instance=ExtResource("7_dxv8d")]
+
+[node name="objectspawner" parent="Posters-random-spawn2" index="0" node_paths=PackedStringArray("spawnpoints")]
+spawnpoints = [NodePath("../spawnpoint"), NodePath("../spawnpoint2"), NodePath("../spawnpoint3")]
+
+[node name="spawnpoint" parent="Posters-random-spawn2" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.212, 0, 0)
+
+[node name="spawnpoint2" parent="Posters-random-spawn2" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 5)
+
+[node name="spawnpoint3" type="Node3D" parent="Posters-random-spawn2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -5)
+
+[node name="Lamps-random-spwan" parent="." instance=ExtResource("8_f4rov")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26341, 0)
+
+[editable path="Posters-random-spawn"]
+[editable path="Posters-random-spawn2"]
