@@ -2,19 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdw8jxph1id11"
-path="res://.godot/imported/lampBroke_lampbroke.png-53a7c007864cfee8084a9cde9dfd6560.ctex"
+uid="uid://ppvlkitav8sw"
+path="res://.godot/imported/poster.png-3309bdb0aa01570b91ce834db47b2914.ctex"
 metadata={
 "vram_texture": false
-}
-generator_parameters={
-"md5": "04f6e85474262cc2ce13b1a3f2d69897"
 }
 
 [deps]
 
-source_file="res://assets/models/props/lampBroken/lampBroke_lampbroke.png"
-dest_files=["res://.godot/imported/lampBroke_lampbroke.png-53a7c007864cfee8084a9cde9dfd6560.ctex"]
+source_file="res://source_assets/blend_files/poster.png"
+dest_files=["res://.godot/imported/poster.png-3309bdb0aa01570b91ce834db47b2914.ctex"]
 
 [params]
 
@@ -24,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -1,7 +1,10 @@
 @tool
+# all the object you want to spawn you alse need to add the glb mesh to the spawnprops-shader-compile scnene in main
 
 extends Node
+signal all_objects_spawned()
 @export var spawnpoints : Array[Node3D] = []
+## all the object you want to spawn you alse need to add the glb mesh to the spawnprops-shader-compile scnene in main
 @export var spawnobjects : Array[PackedScene] = []
 @export var spawnchange: Array[float] = []
 @export var spawn_object_editor := false:
@@ -49,11 +52,13 @@ func spawn_object_at_random_point():
 	if spawned_instance and is_instance_valid(spawned_instance):
 		spawned_instance.queue_free()
 	for child in self.get_children(): child.queue_free()	
+	
 	var spawnpoint = spawnpoints[randi() % spawnpoints.size()]
 	var object_to_spawn = pick_spawn_object()
 	spawned_instance = object_to_spawn.instantiate()
 	spawned_instance.position = spawnpoint.position
 	spawned_instance.transform.origin = spawnpoint.transform.origin
-
+	spawned_instance.rotation = spawnpoint.rotation
+	emit_signal("all_objects_spawned")
 	add_child(spawned_instance)
 

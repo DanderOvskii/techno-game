@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bps4e5otfivdx" path="res://assets/models/environment/maptiles-with-collision/main/halway/halway-colonly.glb" id="1_ch170"]
 [ext_resource type="PackedScene" uid="uid://b055kyl6fonif" path="res://assets/models/environment/maptiles-with-collision/main/halway/halway.glb" id="2_1fy0y"]
-[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/lamps-random-spawn/lamps-random-spwan.tscn" id="3_1fy0y"]
+[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/random object spawners/lamps-random-spwan.tscn" id="3_1fy0y"]
 
 [node name="Halway-strait" type="Node3D"]
 

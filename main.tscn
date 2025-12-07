@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://brs3xpi7hi383"]
+[gd_scene load_steps=10 format=3 uid="uid://brs3xpi7hi383"]
 
 [ext_resource type="PackedScene" uid="uid://del4em7ehgna4" path="res://scenes/environment/map-generation.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://cle4w0c1gbp06" path="res://testing/exit game.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dy3pclipcci3c" path="res://testing/player_testing.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bh32su754dosj" path="res://scenes/effects/music_mashine.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dot6r1j7g3m5u" path="res://testing/testobject.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ya0ilwxbrsth" path="res://prefabs/props/spawnprops-shader-compile.tscn" id="6_272bh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lquwl"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -54,3 +55,5 @@ slide_height = 1.5
 [node name="Testobject" parent="." instance=ExtResource("6_7mycd")]
 transform = Transform3D(-1.61, 0, 1.40751e-07, 0, 1.61, 0, -1.40751e-07, 0, -1.61, 0.341117, 12.833, 59.9312)
 visible = false
+
+[node name="Spawnprops-shader-cmpile" parent="." instance=ExtResource("6_272bh")]

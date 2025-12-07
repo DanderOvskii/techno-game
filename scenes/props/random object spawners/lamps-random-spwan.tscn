@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://de2twosj4m0up"]
+
+[ext_resource type="Script" uid="uid://7f7nl4kx2buo" path="res://scripts/core/spawnobjects.gd" id="1_ln088"]
+[ext_resource type="PackedScene" uid="uid://b8b6nhymcwrq" path="res://prefabs/props/lamp-scene.tscn" id="2_ys4pl"]
+[ext_resource type="PackedScene" uid="uid://3o6qcy14vjq2" path="res://prefabs/props/lampBroken/lampBroken-scnene.tscn" id="3_4gkg5"]
+[ext_resource type="PackedScene" uid="uid://2a1mlxdybjka" path="res://prefabs/props/emptyscene.tscn" id="4_s0jso"]
+
+[node name="Lamps-random-spwan" type="Node3D"]
+
+[node name="objectspawner" type="Node3D" parent="." node_paths=PackedStringArray("spawnpoints")]
+script = ExtResource("1_ln088")
+spawnpoints = [NodePath("../spawnpoint")]
+spawnobjects = Array[PackedScene]([ExtResource("2_ys4pl"), ExtResource("3_4gkg5"), ExtResource("4_s0jso")])
+spawnchange = Array[float]([100.0, 25.0, 200.0])
+spawn_object_editor = true
+
+[node name="spawnpoint" type="Node3D" parent="."]

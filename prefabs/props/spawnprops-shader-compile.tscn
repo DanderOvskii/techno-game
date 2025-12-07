@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://ya0ilwxbrsth"]
+
+[ext_resource type="PackedScene" uid="uid://b65kho6g1flt5" path="res://assets/models/props/lamp/lamp.glb" id="1_5p6mx"]
+[ext_resource type="PackedScene" uid="uid://cchpc3cgphx1v" path="res://assets/models/props/lampBroken/lampBroke.glb" id="2_flo8u"]
+[ext_resource type="PackedScene" uid="uid://bry3mkucxeblf" path="res://assets/models/props/poster/poster.glb" id="3_vmodg"]
+
+[node name="Spawnprops-shader-cmpile" type="Node3D"]
+
+[node name="lamp" parent="." instance=ExtResource("1_5p6mx")]
+
+[node name="lampBroke2" parent="." instance=ExtResource("2_flo8u")]
+
+[node name="poster" parent="." instance=ExtResource("3_vmodg")]

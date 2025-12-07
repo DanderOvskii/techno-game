@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cc8ih1f0dc8u2" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_w8t1m"]
 [ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_8246s"]
 [ext_resource type="PackedScene" uid="uid://dot6r1j7g3m5u" path="res://testing/testobject.tscn" id="5_8246s"]
-[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/lamps-random-spawn/lamps-random-spwan.tscn" id="6_g18ij"]
-[ext_resource type="PackedScene" uid="uid://3o6qcy14vjq2" path="res://prefabs/props/lampBroken/lampBroken-scnene.tscn" id="8_3213w"]
+[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/random object spawners/lamps-random-spwan.tscn" id="6_g18ij"]
+[ext_resource type="PackedScene" uid="uid://dfjgucwhhhaqj" path="res://scenes/props/random object spawners/posters-random-spawn.tscn" id="7_g18ij"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
 albedo_texture = ExtResource("2_5rjwt")
@@ -50,5 +50,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522135, -0.731868, 4.35945)
 [node name="Lamps-random-spwan" parent="." instance=ExtResource("6_g18ij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26341, 0)
 
-[node name="LampBroken" parent="." instance=ExtResource("8_3213w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2601, -6.81837)
+[node name="Posters-random-spawn" parent="." instance=ExtResource("7_g18ij")]
+
+[node name="spawnpoint" parent="Posters-random-spawn" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.2122, 0, 0)
+
+[node name="spawnpoint2" parent="Posters-random-spawn" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2458, 0, 0)
+
+[editable path="Posters-random-spawn"]

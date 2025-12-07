@@ -10,6 +10,7 @@ var curvature_strength: float = GlobalVars.curvature_strength
 func _ready():
 	_find_curved_materials(get_tree().get_root())
 	_set_curvature_strength(curvature_strength)
+	
 func _process(_delta):
 	var cam_pos = global_position
 	for mat in materials:

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dth3tpr7aq4qq"]
+
+[ext_resource type="PackedScene" uid="uid://bry3mkucxeblf" path="res://assets/models/props/poster/poster.glb" id="1_26skb"]
+
+[node name="PosterNomralScene" type="Node3D"]
+
+[node name="poster" parent="." instance=ExtResource("1_26skb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
