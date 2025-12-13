@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dj5db3b63rs51"]
+
+[ext_resource type="Shader" uid="uid://dj2ptyyx2x75f" path="res://shaders/fx/dungen_room_shader.gdshader" id="1_yrt2o"]
+[ext_resource type="Texture2D" uid="uid://dn22g3msyq68p" path="res://assets/textures/props/trashcan/trashcan.png" id="2_7y3ad"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_yrt2o")
+shader_parameter/albedo_texture = ExtResource("2_7y3ad")
+shader_parameter/emission_strength = 0.0
+shader_parameter/curvature_strength = 0.0
+shader_parameter/camera_position = Vector3(-7.9155e-05, 14.1804, 79.6882)
+shader_parameter/wrap = 0.0
+shader_parameter/cuts = 3
+shader_parameter/SteppedLightOnOf = false
+shader_parameter/use_attenuation = true
+shader_parameter/steepness = 1.0
+shader_parameter/emmisionOnOf = false
+shader_parameter/CurfOnOf = true

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2ct04gaj1n8l"]
+
+[ext_resource type="PackedScene" uid="uid://wasf0p4yl0qa" path="res://assets/models/props/trashcan/trashcan.glb" id="1_xhpbl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhpbl"]
+size = Vector3(1, 1.74548, 0.723877)
+
+[node name="TrashcanScene" type="Node3D"]
+
+[node name="trashcan" parent="." instance=ExtResource("1_xhpbl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0613403, -0.0222566)
+shape = SubResource("BoxShape3D_xhpbl")
