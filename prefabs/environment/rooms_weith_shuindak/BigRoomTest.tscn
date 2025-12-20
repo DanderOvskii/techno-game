@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://qwbk043i80ft"]
+
+[ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_av04u"]
+[ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_h58wi"]
+
+[sub_resource type="Resource" id="Resource_scpwd"]
+metadata/__load_path__ = "res://assets/models/environment/maptiles/bigRoomTEst.glb"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmg2q"]
+albedo_texture = ExtResource("2_h58wi")
+uv1_triplanar = true
+
+[node name="BigRoomTest" type="Node3D"]
+script = ExtResource("1_av04u")
+size_in_voxels = Vector3i(5, 4, 5)
+allow_multifloor = true
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="bigRoomTEst" parent="."]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, 0.75, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.68248e-07, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_xmg2q")
+use_collision = true
+size = Vector3(40, 40, 50)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+operation = 2
+size = Vector3(29.5, 9.5, 49.5)
+
+[node name="DOOR_F_CUT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.75, -24.728)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="DOOR_B_CUT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.75, 25.044)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="DOOR_F_CUT2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 15, 0)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="DOOR_B_CUT2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 15, 0)
+operation = 2
+size = Vector3(2, 4, 1)

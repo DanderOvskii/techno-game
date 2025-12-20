@@ -1,0 +1,19 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dl8qyi2j6e15n"]
+
+[ext_resource type="Shader" uid="uid://dj2ptyyx2x75f" path="res://shaders/fx/dungen_room_shader.gdshader" id="1_ka5fs"]
+[ext_resource type="Texture2D" uid="uid://v5remylst54g" path="res://assets/textures/environment/railing.png" id="2_ka5fs"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ka5fs")
+shader_parameter/albedo_texture = ExtResource("2_ka5fs")
+shader_parameter/emission_strength = 0.0
+shader_parameter/curvature_strength = 0.0
+shader_parameter/camera_position = Vector3(0, 0, 0)
+shader_parameter/wrap = 0.0
+shader_parameter/cuts = 3
+shader_parameter/SteppedLightOnOf = true
+shader_parameter/use_attenuation = false
+shader_parameter/steepness = 3.754
+shader_parameter/emmisionOnOf = false
+shader_parameter/CurfOnOf = true

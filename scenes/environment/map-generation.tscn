@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://del4em7ehgna4"]
+[gd_scene load_steps=7 format=3 uid="uid://del4em7ehgna4"]
 
 [ext_resource type="Script" uid="uid://jmsspt1kqsuq" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="1_yt1jo"]
 [ext_resource type="PackedScene" uid="uid://cn02hrwpikkip" path="res://prefabs/environment/rooms_with_coll/roomsmall_room.tscn" id="2_cw4ka"]
 [ext_resource type="PackedScene" uid="uid://2siqowmiasac" path="res://prefabs/environment/rooms_with_coll/corridor_room.tscn" id="3_myk2o"]
+[ext_resource type="PackedScene" uid="uid://b7cvrqeul83rn" path="res://prefabs/environment/rooms_weith_shuindak/corridor_room.tscn" id="4_frqnq"]
 [ext_resource type="PackedScene" uid="uid://dxmljn5pbp0b1" path="res://prefabs/environment/rooms_with_coll/stair_room.tscn" id="5_myu1e"]
 [ext_resource type="PackedScene" uid="uid://bmqt801h5p3nj" path="res://prefabs/environment/rooms_with_coll/startSmall_room.tscn" id="6_cqat8"]
 
@@ -11,7 +12,7 @@
 [node name="DungeonGenerator3D" type="Node3D" parent="."]
 script = ExtResource("1_yt1jo")
 room_scenes = Array[PackedScene]([ExtResource("5_myu1e"), ExtResource("2_cw4ka")])
-corridor_room_scene = ExtResource("3_myk2o")
+corridor_room_scene = ExtResource("4_frqnq")
 dungeon_size = Vector3i(13, 6, 35)
 voxel_scale = Vector3(5, 5, 5)
 max_retries = 2

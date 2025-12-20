@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciftdm2p0wvki"]
+
+[ext_resource type="PackedScene" uid="uid://cd5xcm7gx4nil" path="res://assets/models/environment/maptiles-schuindak/CornerShuin.glb" id="2_kf055"]
+[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/random object spawners/lamps-random-spwan.tscn" id="3_ucw1l"]
+
+[node name="Halway-corner" type="Node3D"]
+
+[node name="Lamps-random-spwan" parent="." instance=ExtResource("3_ucw1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.72283, 0)
+
+[node name="CornerShuin" parent="." instance=ExtResource("2_kf055")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0, 0)

@@ -1,12 +1,12 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d1wst0tjkxxxr"]
 
-[ext_resource type="Shader" uid="uid://dj2ptyyx2x75f" path="res://shaders/fx/dungen_room_shader.gdshader" id="1_q04ep"]
-[ext_resource type="Texture2D" uid="uid://box7cmaei100j" path="res://assets/textures/environment/fulltexture.png" id="2_oix1h"]
+[ext_resource type="Shader" uid="uid://dj2ptyyx2x75f" path="res://shaders/fx/dungen_room_shader.gdshader" id="1_uyiox"]
+[ext_resource type="Texture2D" uid="uid://box7cmaei100j" path="res://assets/textures/environment/fulltexture.png" id="2_llaol"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_q04ep")
-shader_parameter/albedo_texture = ExtResource("2_oix1h")
+shader = ExtResource("1_uyiox")
+shader_parameter/albedo_texture = ExtResource("2_llaol")
 shader_parameter/emission_strength = 0.0
 shader_parameter/curvature_strength = 0.0
 shader_parameter/camera_position = Vector3(-7.9155e-05, 14.1804, 79.6882)

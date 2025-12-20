@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://wurmi8k7tup2"]
+
+[ext_resource type="PackedScene" uid="uid://pmqoi3462xl4" path="res://assets/models/environment/maptiles-schuindak/TsectionShuin.glb" id="2_hiqoj"]
+[ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/random object spawners/lamps-random-spwan.tscn" id="3_xvdj5"]
+
+[node name="Halway-t" type="Node3D"]
+
+[node name="Lamps-random-spwan" parent="." instance=ExtResource("3_xvdj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.71411, 0)
+
+[node name="TsectionShuin" parent="." instance=ExtResource("2_hiqoj")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

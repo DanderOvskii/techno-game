@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7cvrqeul83rn"]
+
+[ext_resource type="Script" uid="uid://c18dc0obh7a3j" path="res://addons/SimpleDungeons/corridor_replace_Room.gd" id="1_2gdvh"]
+[ext_resource type="PackedScene" uid="uid://doikcx1axksa7" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-strait.tscn" id="2_hm74t"]
+[ext_resource type="PackedScene" uid="uid://ciftdm2p0wvki" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-corner.tscn" id="3_pqxc3"]
+[ext_resource type="PackedScene" uid="uid://wurmi8k7tup2" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-T.tscn" id="4_lu4m1"]
+[ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="5_rrtq0"]
+[ext_resource type="PackedScene" uid="uid://d1y1yiamudepd" path="res://assets/models/environment/maptiles-schuindak/CorridorShuin.glb" id="6_n3jpw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rs85m"]
+albedo_texture = ExtResource("5_rrtq0")
+uv1_triplanar = true
+
+[node name="Corridor" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305872, 9.53674e-07, 0.0025425)
+script = ExtResource("1_2gdvh")
+room_straight = ExtResource("2_hm74t")
+room_corner = ExtResource("3_pqxc3")
+room_tjunction = ExtResource("4_lu4m1")
+voxel_scale = Vector3(6, 6, 6)
+metadata/_custom_type_script = "uid://c02cpa7oirtca"
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.68248e-07, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_rs85m")
+calculate_tangents = false
+size = Vector3(6, 6, 6)
+
+[node name="DOOR?_F_CUT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26412e-07, 0, -2.66015)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="DOOR?_R_CUT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.33891, 0, -2.3264e-07)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="DOOR?_L_CUT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.33891, 0, 2.32639e-07)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="DOOR?_B_CUT" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23334e-07, 0, 2.44536)
+operation = 2
+size = Vector3(2, 4, 1)
+
+[node name="RemoveUnusedDoors" type="Node" parent="."]
+
+[node name="CorridorShuin" parent="." instance=ExtResource("6_n3jpw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
