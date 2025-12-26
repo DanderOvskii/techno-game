@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://by33c3t2uqkc5"]
+[gd_scene load_steps=5 format=3 uid="uid://by33c3t2uqkc5"]
 
 [ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_t6pdw"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_6lddh"]
-[ext_resource type="PackedScene" uid="uid://dj63oc74yh1nq" path="res://assets/models/environment/maptiles-with-collision/main/stairs/stairs-colonly.glb" id="3_aghs1"]
-[ext_resource type="PackedScene" uid="uid://bhtv17omise0s" path="res://assets/models/environment/maptiles-with-collision/main/stairs/stairs.glb" id="4_6qhk1"]
+[ext_resource type="PackedScene" uid="uid://dynana5dw5g1p" path="res://assets/models/environment/maptiles-schuindak/matro-stairs.glb" id="5_uvici"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ddeon"]
 albedo_texture = ExtResource("2_6lddh")
@@ -13,7 +12,7 @@ uv1_world_triplanar = true
 [node name="Stair" type="Node3D"]
 script = ExtResource("1_t6pdw")
 size_in_voxels = Vector3i(2, 2, 1)
-voxel_scale = Vector3(5, 5, 5)
+voxel_scale = Vector3(6, 6, 6)
 max_count = 15
 is_stair_room = true
 lock_rotation = true
@@ -26,17 +25,14 @@ material_override = SubResource("StandardMaterial3D_ddeon")
 size = Vector3(10, 10, 5)
 
 [node name="DOOR_R_CUT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.99924, -2.75, -4.19696e-07)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.78707, -2.75, -3.50822e-07)
 operation = 2
 size = Vector3(2, 4, 1)
 
 [node name="DOOR_L_CUT" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.89599, 2.25, 4.37465e-07)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.47597, 2.25, 3.86762e-07)
 operation = 2
 size = Vector3(2, 4, 1)
 
-[node name="stairs-colonly2" parent="." instance=ExtResource("3_aghs1")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-
-[node name="stairs2" parent="." instance=ExtResource("4_6qhk1")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+[node name="matro-stairs" parent="." instance=ExtResource("5_uvici")]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 0, 0, 0)

@@ -12,7 +12,7 @@ albedo_texture = ExtResource("5_rrtq0")
 uv1_triplanar = true
 
 [node name="Corridor" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0305872, 9.53674e-07, 0.0025425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031, 0, 0)
 script = ExtResource("1_2gdvh")
 room_straight = ExtResource("2_hm74t")
 room_corner = ExtResource("3_pqxc3")
