@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dot6r1j7g3m5u"]
+[gd_scene load_steps=6 format=3 uid="uid://d12cu6vhsrjgm"]
 
 [ext_resource type="Texture2D" uid="uid://gweamtnxmepx" path="res://gameicon.png" id="1_3nf6u"]
 [ext_resource type="Material" uid="uid://dnga306p5glv8" path="res://shaders/materials/general_material_animated.tres" id="2_x5hox"]
