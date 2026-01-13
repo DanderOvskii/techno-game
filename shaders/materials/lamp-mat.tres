@@ -1,13 +1,13 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://crn1leyamlpg8"]
 
 [ext_resource type="Shader" uid="uid://dj2ptyyx2x75f" path="res://shaders/fx/dungen_room_shader.gdshader" id="1_hbj4l"]
-[ext_resource type="Texture2D" uid="uid://bvmu1kmt3uhm3" path="res://assets/textures/environment/lamp_lamp.png" id="2_hbj4l"]
+[ext_resource type="Texture2D" uid="uid://wix0dw4715ep" path="res://assets/textures/props/lamp/lamp_lamp.png" id="2_xhefp"]
 [ext_resource type="Texture2D" uid="uid://lod4481chyj7" path="res://assets/textures/props/lamp/lampemission.png" id="3_xhefp"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_hbj4l")
-shader_parameter/albedo_texture = ExtResource("2_hbj4l")
+shader_parameter/albedo_texture = ExtResource("2_xhefp")
 shader_parameter/emmision_map = ExtResource("3_xhefp")
 shader_parameter/emission_strength = 10.0
 shader_parameter/curvature_strength = 0.0
