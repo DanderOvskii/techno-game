@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dy3pclipcci3c"]
+[gd_scene load_steps=10 format=3 uid="uid://dy3pclipcci3c"]
 
 [ext_resource type="Script" uid="uid://bni04d7hganph" path="res://testing/CharacterController.gd" id="1_l3nwf"]
 [ext_resource type="Script" uid="uid://uxix2eff0a0i" path="res://scripts/ui/track_worldcurf_camera.gd" id="2_ofbi1"]
 [ext_resource type="Material" uid="uid://bswre08ys8d4" path="res://shaders/materials/pixelated_shader_mat.tres" id="3_k3t4a"]
+[ext_resource type="PackedScene" uid="uid://do8sxyckvrerb" path="res://scenes/weapons/test-gun.tscn" id="4_da4rq"]
+[ext_resource type="Resource" uid="uid://bnoco8ldcespc" path="res://testing/gun/gun_test_1.tres" id="5_da4rq"]
+[ext_resource type="Script" uid="uid://dsckoa62fbu3q" path="res://testing/gun/gunController.gd" id="6_q7etb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofbi1"]
 radius = 0.75
@@ -16,8 +19,9 @@ height = 3.0
 flip_faces = true
 size = Vector2(2, 2)
 
-[node name="PlayerTesting" type="CharacterBody3D" groups=["player"]]
+[node name="PlayerTesting" type="CharacterBody3D" node_paths=PackedStringArray("gun") groups=["player"]]
 script = ExtResource("1_l3nwf")
+gun = NodePath("GunController")
 
 [node name="walkCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14)
@@ -28,10 +32,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14)
 mesh = SubResource("CapsuleMesh_k3t4a")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972433, -0.293688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.417081, -0.293688)
 script = ExtResource("2_ofbi1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera"]
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_k3t4a")
 surface_material_override/0 = ExtResource("3_k3t4a")
+
+[node name="Test-gun" type="Node3D" parent="Camera" instance=ExtResource("4_da4rq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.2, -0.3)
+
+[node name="GunController" type="Node3D" parent="." node_paths=PackedStringArray("camera_node", "gun_parrent")]
+script = ExtResource("6_q7etb")
+camera_node = NodePath("../Camera")
+gun_recource = ExtResource("5_da4rq")
+gun_parrent = NodePath("../Camera")
+metadata/_custom_type_script = "uid://dsckoa62fbu3q"
