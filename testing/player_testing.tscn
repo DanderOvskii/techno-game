@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://bswre08ys8d4" path="res://shaders/materials/pixelated_shader_mat.tres" id="3_k3t4a"]
 [ext_resource type="PackedScene" uid="uid://do8sxyckvrerb" path="res://scenes/weapons/test-gun.tscn" id="4_da4rq"]
 [ext_resource type="Resource" uid="uid://bnoco8ldcespc" path="res://testing/gun/gun_test_1.tres" id="5_da4rq"]
-[ext_resource type="Script" uid="uid://dsckoa62fbu3q" path="res://testing/gun/gunController.gd" id="6_q7etb"]
+[ext_resource type="Script" uid="uid://dsckoa62fbu3q" path="res://testing/gun/scripts/gunController.gd" id="6_q7etb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofbi1"]
 radius = 0.75
@@ -40,7 +40,7 @@ extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_k3t4a")
 surface_material_override/0 = ExtResource("3_k3t4a")
 
-[node name="Test-gun" type="Node3D" parent="Camera" instance=ExtResource("4_da4rq")]
+[node name="Test-gun" parent="Camera" instance=ExtResource("4_da4rq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.2, -0.3)
 
 [node name="GunController" type="Node3D" parent="." node_paths=PackedStringArray("camera_node", "gun_parrent")]

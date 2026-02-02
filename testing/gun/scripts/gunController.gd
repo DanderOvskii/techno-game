@@ -1,6 +1,6 @@
 @tool
-extends Node3D
 class_name GunController
+extends Node3D
 @export var camera_node: Camera3D
 
 @export var gun_recource: GunRecorce:
@@ -10,14 +10,17 @@ class_name GunController
             instance_gun()
 
 @export var gun_parrent: Node3D
+@export var gun_state_chart: StateChart
 
 var gun_instance: Node3D
+var current_ammo: int
 
 func _ready():
     if camera_node == null:
         camera_node = get_viewport().get_camera_3d()
     if gun_recource and not Engine.is_editor_hint():
         instance_gun()
+        current_ammo = gun_recource.ammo_capacity
     
 
 func attack():   
@@ -35,3 +38,15 @@ func instance_gun():
             gun_instance.owner = get_tree().edited_scene_root
         gun_instance.position = gun_recource.weapon_position
     print("gun instanced")
+
+
+func can_attack()->bool:
+    return current_ammo > 0
+    
+
+func fire_gun()->void:
+    if can_attack():
+        current_ammo -= 1
+        print("Fired! Ammo left: %d" % current_ammo)
+    else:
+        print("Out of ammo!")

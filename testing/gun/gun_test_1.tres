@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="GunRecorce" load_steps=3 format=3 uid="uid://bnoco8ldcespc"]
 
 [ext_resource type="PackedScene" uid="uid://do8sxyckvrerb" path="res://scenes/weapons/test-gun.tscn" id="1_ay87p"]
-[ext_resource type="Script" uid="uid://ra3e8tkqvbvo" path="res://testing/gun/gunRecorce.gd" id="1_qkc1f"]
+[ext_resource type="Script" uid="uid://ra3e8tkqvbvo" path="res://testing/gun/scripts/gunRecorce.gd" id="1_qkc1f"]
 
 [resource]
 script = ExtResource("1_qkc1f")
