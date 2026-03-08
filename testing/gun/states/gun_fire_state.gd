@@ -11,6 +11,6 @@ func _on_fire_state_physics_processing(delta):
         return
 
     if Gun_controller.current_ammo <= 0:
-        Gun_controller.gun_state_chart.send_event("no_ammo")
+        Gun_controller.gun_state_chart.send_event("noAmmo")
         return
-    Gun_controller.gun_state_chart.send_event("idle")
+    Gun_controller.gun_state_chart.send_event("onIdle")

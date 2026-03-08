@@ -24,7 +24,7 @@ PatternManager="*res://scripts/music_mashine/pattern_manager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SimpleDungeons/plugin.cfg")
+enabled=PackedStringArray("res://addons/SimpleDungeons/plugin.cfg", "res://addons/godot_state_charts/plugin.cfg")
 
 [filesystem]
 

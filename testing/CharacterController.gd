@@ -93,8 +93,7 @@ func _physics_process(delta):
 
 
 	camera.fov = move_toward(camera.fov, target_fov, fov_speed *10* delta)
-	if Input.is_action_just_released("shoot"):
-		gun.attack()
+
 	
 	slide(delta)
 
