@@ -48,5 +48,38 @@ func fire_gun()->void:
     if can_attack():
         current_ammo -= 1
         print("Fired! Ammo left: %d" % current_ammo)
-    else:
-        print("Out of ammo!")
+        if gun_recource.is_hitscan:
+            _preform_hitscan()
+
+
+func _preform_hitscan():
+    if not camera_node:
+        return
+    var space_state = camera_node.get_world_3d().direct_space_state
+    var from = camera_node.global_position
+    var forward = -camera_node.global_transform.basis.z
+    var to = from + forward * gun_recource.shoot_range
+
+    var quert = PhysicsRayQueryParameters3D.create(from, to)
+    quert.collision_mask = 2
+    var result = space_state.intersect_ray(quert)
+
+    if result:
+        print("Hit: %s" % result.collider.name)
+        _spawn_impact_effect(result.position)
+
+
+func _spawn_impact_effect(position: Vector3):
+    var marker = MeshInstance3D.new()
+    var box = BoxMesh.new()
+    marker.scale = Vector3(0.1, 0.1, 0.1)
+    marker.mesh = box
+
+    var material = StandardMaterial3D.new()
+    material.albedo_color = Color.RED
+    marker.set_surface_override_material(0,material)
+
+    get_tree().current_scene.add_child(marker)
+    marker.global_position = position
+
+    get_tree().create_timer(2.0).timeout.connect(marker.queue_free)

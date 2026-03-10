@@ -1,7 +1,7 @@
 extends GunState
 
 func _on_empty_state_entered():
-    print("Gun is empty")
+    print("Enterd  empty")
 
     Gun_controller.fire_gun()
 

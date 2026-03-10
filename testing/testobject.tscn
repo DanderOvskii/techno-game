@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dot6r1j7g3m5u"]
+[gd_scene load_steps=7 format=3 uid="uid://dot6r1j7g3m5u"]
 
 [ext_resource type="Texture2D" uid="uid://gweamtnxmepx" path="res://gameicon.png" id="1_3nf6u"]
 [ext_resource type="Material" uid="uid://dnga306p5glv8" path="res://shaders/materials/general_material_animated.tres" id="2_x5hox"]
@@ -11,6 +11,8 @@ uv1_scale = Vector3(1.895, 1.848, 1.895)
 
 [sub_resource type="SphereMesh" id="SphereMesh_6w20l"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_x5hox"]
+
 [node name="Testobject" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -21,3 +23,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6w20l")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41546, 0, 0)
 mesh = SubResource("SphereMesh_6w20l")
 surface_material_override/0 = ExtResource("2_x5hox")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41546, 0, 0)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41546, 0, 0)
+shape = SubResource("SphereShape3D_x5hox")

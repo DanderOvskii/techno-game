@@ -1,3 +1,3 @@
 extends Node
-var curvature_strength: float = 0.0
+var curvature_strength: float = 0.01
 

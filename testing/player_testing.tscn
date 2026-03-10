@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dy3pclipcci3c"]
+[gd_scene load_steps=19 format=3 uid="uid://dy3pclipcci3c"]
 
 [ext_resource type="Script" uid="uid://bni04d7hganph" path="res://testing/CharacterController.gd" id="1_l3nwf"]
 [ext_resource type="Script" uid="uid://uxix2eff0a0i" path="res://scripts/ui/track_worldcurf_camera.gd" id="2_ofbi1"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://l0xddq5var5j" path="res://testing/gun/states/gun_idle_state.gd" id="12_vve0n"]
 [ext_resource type="Script" uid="uid://80t0307fsujn" path="res://testing/gun/states/gun_fire_state.gd" id="13_q0lm2"]
 [ext_resource type="Script" uid="uid://dk5a3aolxujr0" path="res://testing/gun/states/gun_empty_state.gd" id="14_fq333"]
+[ext_resource type="Script" uid="uid://cdijqn2805p0t" path="res://testing/center_dot.gd" id="15_3g6se"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofbi1"]
 radius = 0.75
@@ -107,6 +108,27 @@ script = ExtResource("13_q0lm2")
 
 [node name="emptyState" type="Node" parent="GunStateMashine"]
 script = ExtResource("14_fq333")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_3g6se")
+DORT_RADIUS = 1.0
 
 [connection signal="state_entered" from="GunStateChart/Root/FiringState" to="GunStateMashine/FireState" method="_on_fire_state_entered"]
 [connection signal="state_physics_processing" from="GunStateChart/Root/FiringState" to="GunStateMashine/FireState" method="_on_fire_state_physics_processing"]
