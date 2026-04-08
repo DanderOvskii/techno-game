@@ -34,61 +34,64 @@ lock_rotation = false
 [node name="RoomsContainer" type="Node3D" parent="DungeonGenerator3D"]
 
 [node name="RoomOne_0" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2.5, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.5, 5)
 
 [node name="RoomOne_1" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -7.5, -30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -2.5, 10)
 
 [node name="RoomOne_2" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, -2.5, 65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 2.5, 5)
 
 [node name="RoomOne_3" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2.5, 50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2.5, -15)
 
 [node name="RoomOne_4" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 7.5, 70)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 12.5, -30)
 
 [node name="RoomOne_5" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -2.5, -70)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.5, -35)
 
 [node name="RoomOne_6" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.5, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -12.5, -25)
 
 [node name="RoomOne_7" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 7.5, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 10)
 
 [node name="RoomOne_8" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 2.5, 35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, -10)
 
 [node name="RoomOne_9" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -2.5, -40)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 7.5, -50)
 
 [node name="RoomOne_10" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -2.5, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -12.5, 15)
 
 [node name="RoomOne_11" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -7.5, -60)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -2.5, -30)
 
 [node name="RoomOne_12" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 2.5, -35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -2.5, 35)
 
 [node name="RoomOne_13" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 7.5, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -7.5, -35)
 
 [node name="RoomOne_14" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("2_cw4ka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 12.5, -65)
 
 [node name="Stair_15" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_1llmv")]
-transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, 10, 10, -2.5)
+transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, 15, 10, 37.5)
 
 [node name="Stair_16" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_1llmv")]
-transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, 5, 0, -42.5)
+transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, 0, -10, -52.5)
 
 [node name="Stair_17" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_1llmv")]
-transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, 5, -5, -52.5)
+transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, 15, 5, 2.5)
 
 [node name="Stair_18" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_1llmv")]
-transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, -10, 5, 2.5)
+transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, 30, 0, -67.5)
 
-[node name="Corridor_125" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("4_frqnq")]
-transform = Transform3D(0.833333, 0, 0, 0, 0.833333, 0, 0, 0, 0.833333, -10, 7.5, -5)
+[node name="Stair_19" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("3_1llmv")]
+transform = Transform3D(-3.64262e-08, 0, 0.833333, 0, 0.833333, 0, -0.833333, 0, -3.64262e-08, -25, -5, -12.5)
+
+[node name="Corridor_126" parent="DungeonGenerator3D/RoomsContainer" instance=ExtResource("4_frqnq")]
+transform = Transform3D(0.833333, 0, 0, 0, 0.833333, 0, 0, 0, 0.833333, 15, 7.5, -5)

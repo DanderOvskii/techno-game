@@ -47,7 +47,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
 [node name="Testobject" parent="." instance=ExtResource("5_8246s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522135, -0.731868, 4.35945)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.566606, -0.731868, 8.15428)
 
 [node name="Lamps-random-spwan" parent="." instance=ExtResource("6_g18ij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26341, 0)
@@ -82,10 +82,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -5)
 
 [node name="Lamp-scene" parent="." instance=ExtResource("8_3213w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.22583, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62725, 2.22583, 0)
 
 [node name="Lamp-scene2" parent="." instance=ExtResource("8_3213w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.22583, -10.274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7411, 2.22583, -10.274)
 
 [node name="TrashcanScene" parent="." instance=ExtResource("9_ouilg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.13442, -1.06973, -6.85843)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj8wye8lvswr3"]
+
+[ext_resource type="PackedScene" uid="uid://yavot0any7jm" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-ghost-colonly.glb" id="1_iakm0"]
+[ext_resource type="Script" uid="uid://cdw0hmo7soy5s" path="res://scripts/world/cuve_ghost_collisions.gd" id="2_ol60r"]
+
+[node name="Ghost-collision-test" type="Node3D"]
+
+[node name="roomsmall-ghost-colonly" parent="." instance=ExtResource("1_iakm0")]
+
+[node name="roomsmall" parent="roomsmall-ghost-colonly" index="0" node_paths=PackedStringArray("collision_shape")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_ol60r")
+collision_shape = NodePath("CollisionShape3D")
+
+[node name="CollisionShape3D" parent="roomsmall-ghost-colonly/roomsmall" index="0"]
+debug_color = Color(0.971668, 0, 0.446374, 0.42)
+
+[editable path="roomsmall-ghost-colonly"]
