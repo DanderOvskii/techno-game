@@ -70,6 +70,11 @@ func fire_gun()->void:
             _preform_hitscan()
 
 
+func reload_gun():
+    current_ammo = gun_recource.ammo_capacity
+    print("Reloaded! Ammo refilled to: %d" % current_ammo)
+
+
 func _preform_hitscan():
     if not camera_node:
         return

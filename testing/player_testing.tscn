@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dy3pclipcci3c"]
+[gd_scene load_steps=20 format=3 uid="uid://dy3pclipcci3c"]
 
 [ext_resource type="Script" uid="uid://bni04d7hganph" path="res://testing/CharacterController.gd" id="1_l3nwf"]
 [ext_resource type="Script" uid="uid://uxix2eff0a0i" path="res://scripts/ui/track_worldcurf_camera.gd" id="2_ofbi1"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://80t0307fsujn" path="res://testing/gun/states/gun_fire_state.gd" id="13_q0lm2"]
 [ext_resource type="Script" uid="uid://dk5a3aolxujr0" path="res://testing/gun/states/gun_empty_state.gd" id="14_fq333"]
 [ext_resource type="Script" uid="uid://cdijqn2805p0t" path="res://testing/center_dot.gd" id="15_3g6se"]
+[ext_resource type="Script" uid="uid://bekmygk5l0rj" path="res://testing/gun/states/gu_reload_state.gd" id="15_m77e4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofbi1"]
 radius = 0.75
@@ -78,6 +79,9 @@ script = ExtResource("9_m77e4")
 [node name="EmptyState" type="Node" parent="GunStateChart/Root"]
 script = ExtResource("9_m77e4")
 
+[node name="ReloadState" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("9_m77e4")
+
 [node name="OnFire" type="Node" parent="GunStateChart/Root"]
 script = ExtResource("10_6j2tr")
 to = NodePath("../FiringState")
@@ -96,6 +100,12 @@ to = NodePath("../IdleState")
 event = &"onIdle"
 delay_in_seconds = "0.0"
 
+[node name="OnReload" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("10_6j2tr")
+to = NodePath("../ReloadState")
+event = &"reloading"
+delay_in_seconds = "0.0"
+
 [node name="GunStateMashine" type="Node" parent="." node_paths=PackedStringArray("Gun_controller")]
 unique_name_in_owner = true
 script = ExtResource("11_0c2yl")
@@ -109,6 +119,9 @@ script = ExtResource("13_q0lm2")
 
 [node name="emptyState" type="Node" parent="GunStateMashine"]
 script = ExtResource("14_fq333")
+
+[node name="ReloadState" type="Node" parent="GunStateMashine"]
+script = ExtResource("15_m77e4")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -136,3 +149,5 @@ DORT_RADIUS = 1.0
 [connection signal="state_processing" from="GunStateChart/Root/IdleState" to="GunStateMashine/IdleState" method="_on_idle_state_processing"]
 [connection signal="state_entered" from="GunStateChart/Root/EmptyState" to="GunStateMashine/emptyState" method="_on_empty_state_entered"]
 [connection signal="state_processing" from="GunStateChart/Root/EmptyState" to="GunStateMashine/emptyState" method="_on_empty_state_processing"]
+[connection signal="state_entered" from="GunStateChart/Root/ReloadState" to="GunStateMashine/ReloadState" method="_on_reload_state_entered"]
+[connection signal="state_physics_processing" from="GunStateChart/Root/ReloadState" to="GunStateMashine/ReloadState" method="_on_reload_state_physics_processing"]
