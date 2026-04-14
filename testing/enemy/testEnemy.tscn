@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8trktg7eimdf"]
+
+[ext_resource type="Texture2D" uid="uid://bpcnm21umur4e" path="res://testing/enemy/unnamed.png" id="1_rdi0b"]
+[ext_resource type="Script" uid="uid://cab6ibnndcwp1" path="res://scripts/world/move_object_cuve.gd" id="2_nv02o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdi0b"]
+size = Vector3(1.5, 1.5, 0.121)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nv02o"]
+size = Vector3(1.5, 1.5, 0.121)
+
+[node name="TestEnemy" type="Node3D" groups=["enemy"]]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_rdi0b")
+
+[node name="enemyghostHitbox" type="StaticBody3D" parent="RigidBody3D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_nv02o")
+
+[node name="enemyGhostHitbox" type="CollisionShape3D" parent="RigidBody3D/enemyghostHitbox"]
+shape = SubResource("BoxShape3D_nv02o")
+
+[node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/enemyghostHitbox"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+texture = ExtResource("1_rdi0b")

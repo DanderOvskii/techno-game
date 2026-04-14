@@ -1,0 +1,16 @@
+extends GunState
+
+func _on_empty_state_entered():
+    print("Enterd  empty")
+
+    Gun_controller.fire_gun()
+
+
+
+
+func _on_empty_state_processing(delta):
+    if Input.is_action_just_pressed("reload"):
+        print("Reloading...")
+        Gun_controller.gun_state_chart.send_event("reloading")
+        return
+    pass

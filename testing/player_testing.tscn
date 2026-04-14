@@ -1,9 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://dy3pclipcci3c"]
+[gd_scene load_steps=20 format=3 uid="uid://dy3pclipcci3c"]
 
 [ext_resource type="Script" uid="uid://bni04d7hganph" path="res://testing/CharacterController.gd" id="1_l3nwf"]
 [ext_resource type="Script" uid="uid://uxix2eff0a0i" path="res://scripts/ui/track_worldcurf_camera.gd" id="2_ofbi1"]
 [ext_resource type="Material" uid="uid://bswre08ys8d4" path="res://shaders/materials/pixelated_shader_mat.tres" id="3_k3t4a"]
 [ext_resource type="PackedScene" uid="uid://clh7cuotj6s1y" path="res://main_menu.tscn" id="4_nn3a3"]
+[ext_resource type="PackedScene" uid="uid://do8sxyckvrerb" path="res://scenes/weapons/test-gun.tscn" id="4_da4rq"]
+[ext_resource type="Resource" uid="uid://bnoco8ldcespc" path="res://testing/gun/gun_test_1.tres" id="5_da4rq"]
+[ext_resource type="Script" uid="uid://dsckoa62fbu3q" path="res://testing/gun/scripts/gunController.gd" id="6_q7etb"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="7_fk76q"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="8_3g6se"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="9_m77e4"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="10_6j2tr"]
+[ext_resource type="Script" uid="uid://mdx8kbevjkgu" path="res://testing/gun/scripts/gun-state-maschine.gd" id="11_0c2yl"]
+[ext_resource type="Script" uid="uid://l0xddq5var5j" path="res://testing/gun/states/gun_idle_state.gd" id="12_vve0n"]
+[ext_resource type="Script" uid="uid://80t0307fsujn" path="res://testing/gun/states/gun_fire_state.gd" id="13_q0lm2"]
+[ext_resource type="Script" uid="uid://dk5a3aolxujr0" path="res://testing/gun/states/gun_empty_state.gd" id="14_fq333"]
+[ext_resource type="Script" uid="uid://cdijqn2805p0t" path="res://testing/center_dot.gd" id="15_3g6se"]
+[ext_resource type="Script" uid="uid://bekmygk5l0rj" path="res://testing/gun/states/gu_reload_state.gd" id="15_m77e4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ofbi1"]
 radius = 0.75
@@ -17,8 +30,9 @@ height = 3.0
 flip_faces = true
 size = Vector2(2, 2)
 
-[node name="PlayerTesting" type="CharacterBody3D" groups=["player"]]
+[node name="PlayerTesting" type="CharacterBody3D" node_paths=PackedStringArray("gun") groups=["player"]]
 script = ExtResource("1_l3nwf")
+gun = NodePath("GunController")
 
 [node name="walkCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14)
@@ -29,10 +43,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.14)
 mesh = SubResource("CapsuleMesh_k3t4a")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972433, -0.293688)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.417081, -0.293688)
 script = ExtResource("2_ofbi1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Camera"]
+visible = false
 extra_cull_margin = 16384.0
 mesh = SubResource("QuadMesh_k3t4a")
 surface_material_override/0 = ExtResource("3_k3t4a")
@@ -40,3 +55,103 @@ surface_material_override/0 = ExtResource("3_k3t4a")
 [node name="pause" parent="." instance=ExtResource("4_nn3a3")]
 visible = false
 metadata/_edit_use_anchors_ = true
+[node name="Test-gun" parent="Camera" instance=ExtResource("4_da4rq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.2, -0.3)
+
+[node name="GunController" type="Node3D" parent="." node_paths=PackedStringArray("camera_node", "gun_parrent", "gun_state_chart")]
+script = ExtResource("6_q7etb")
+camera_node = NodePath("../Camera")
+gun_recource = ExtResource("5_da4rq")
+gun_parrent = NodePath("../Camera")
+gun_state_chart = NodePath("../GunStateChart")
+metadata/_custom_type_script = "uid://dsckoa62fbu3q"
+
+[node name="GunStateChart" type="Node" parent="."]
+script = ExtResource("7_fk76q")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="GunStateChart"]
+script = ExtResource("8_3g6se")
+initial_state = NodePath("IdleState")
+
+[node name="FiringState" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("9_m77e4")
+
+[node name="IdleState" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("9_m77e4")
+
+[node name="EmptyState" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("9_m77e4")
+
+[node name="ReloadState" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("9_m77e4")
+
+[node name="OnFire" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("10_6j2tr")
+to = NodePath("../FiringState")
+event = &"fire"
+delay_in_seconds = "0.0"
+
+[node name="OnEmpty" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("10_6j2tr")
+to = NodePath("../EmptyState")
+event = &"noAmmo"
+delay_in_seconds = "0.0"
+
+[node name="OnIdle" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("10_6j2tr")
+to = NodePath("../IdleState")
+event = &"onIdle"
+delay_in_seconds = "0.0"
+
+[node name="OnReload" type="Node" parent="GunStateChart/Root"]
+script = ExtResource("10_6j2tr")
+to = NodePath("../ReloadState")
+event = &"reloading"
+delay_in_seconds = "0.0"
+
+[node name="GunStateMashine" type="Node" parent="." node_paths=PackedStringArray("Gun_controller")]
+unique_name_in_owner = true
+script = ExtResource("11_0c2yl")
+Gun_controller = NodePath("../GunController")
+
+[node name="IdleState" type="Node" parent="GunStateMashine"]
+script = ExtResource("12_vve0n")
+
+[node name="FireState" type="Node" parent="GunStateMashine"]
+script = ExtResource("13_q0lm2")
+
+[node name="emptyState" type="Node" parent="GunStateMashine"]
+script = ExtResource("14_fq333")
+
+[node name="ReloadState" type="Node" parent="GunStateMashine"]
+script = ExtResource("15_m77e4")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("15_3g6se")
+DORT_RADIUS = 1.0
+
+[connection signal="state_entered" from="GunStateChart/Root/FiringState" to="GunStateMashine/FireState" method="_on_fire_state_entered"]
+[connection signal="state_physics_processing" from="GunStateChart/Root/FiringState" to="GunStateMashine/FireState" method="_on_fire_state_physics_processing"]
+[connection signal="state_processing" from="GunStateChart/Root/IdleState" to="GunStateMashine/IdleState" method="_on_idle_state_processing"]
+[connection signal="state_entered" from="GunStateChart/Root/EmptyState" to="GunStateMashine/emptyState" method="_on_empty_state_entered"]
+[connection signal="state_processing" from="GunStateChart/Root/EmptyState" to="GunStateMashine/emptyState" method="_on_empty_state_processing"]
+[connection signal="state_entered" from="GunStateChart/Root/ReloadState" to="GunStateMashine/ReloadState" method="_on_reload_state_entered"]
+[connection signal="state_physics_processing" from="GunStateChart/Root/ReloadState" to="GunStateMashine/ReloadState" method="_on_reload_state_physics_processing"]

@@ -32,6 +32,7 @@ extends CharacterBody3D
 @export_group("Character Settings")
 @export var max_jumps: int = 2  # Max aantal sprongen
 @export var salto_duration: float = 0.6  # Hoe lang de salto duurt
+@export var gun: Node3D
 
 
 @export_group("Controls")
