@@ -106,7 +106,7 @@ func _world_to_physics_pos(visual_pos: Vector3) -> Vector3:
     return Vector3(visual_pos.x, visual_pos.y - y_offset, visual_pos.z)
 
 
-func _is_target_reachable_curved(target_visual_pos: Vector3, steps: int = 50) -> bool:
+func _is_target_reachable_curved(target_visual_pos: Vector3, steps: int = 100) -> bool:
     var from_visual = camera_node.global_position  # Camera isn't curved
     var forward = -camera_node.global_transform.basis.z
 

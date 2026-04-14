@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bmqt801h5p3nj"]
+[gd_scene load_steps=12 format=3 uid="uid://bmqt801h5p3nj"]
 
 [ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_ti62s"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_5rjwt"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dfjgucwhhhaqj" path="res://scenes/props/random object spawners/posters-random-spawn.tscn" id="7_g18ij"]
 [ext_resource type="PackedScene" uid="uid://b8b6nhymcwrq" path="res://prefabs/props/lamp-scene.tscn" id="8_3213w"]
 [ext_resource type="PackedScene" uid="uid://b2ct04gaj1n8l" path="res://prefabs/props/trashcan/trashcan_scene.tscn" id="9_ouilg"]
+[ext_resource type="PackedScene" uid="uid://c8trktg7eimdf" path="res://testing/enemy/testEnemy.tscn" id="10_cvtl0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2dt3i"]
 albedo_texture = ExtResource("2_5rjwt")
@@ -89,6 +90,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7411, 2.22583, -10.274)
 
 [node name="TrashcanScene" parent="." instance=ExtResource("9_ouilg")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.13442, -1.06973, -6.85843)
+
+[node name="TestEnemy" parent="." instance=ExtResource("10_cvtl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.05832)
 
 [editable path="Posters-random-spawn"]
 [editable path="Posters-random-spawn2"]
