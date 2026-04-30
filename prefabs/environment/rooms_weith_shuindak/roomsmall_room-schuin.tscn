@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfxxu3web7iru"]
+[gd_scene load_steps=11 format=3 uid="uid://bfxxu3web7iru"]
 
 [ext_resource type="Script" uid="uid://c02cpa7oirtca" path="res://addons/SimpleDungeons/DungeonRoom3D.gd" id="1_m4i61"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="2_0vngq"]
 [ext_resource type="PackedScene" uid="uid://cc8ih1f0dc8u2" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall-colonly.glb" id="3_lr5w5"]
 [ext_resource type="PackedScene" uid="uid://dxkv2md3u07h4" path="res://assets/models/environment/maptiles-with-collision/main/roomsmall/roomsmall.glb" id="4_snlo4"]
 [ext_resource type="Script" uid="uid://citydhedft4tn" path="res://scripts/music_mashine/triggererea.gd" id="5_chxuo"]
-[ext_resource type="Script" uid="uid://cdw0hmo7soy5s" path="res://scripts/world/cuve_ghost_collisions.gd" id="5_uw58q"]
 [ext_resource type="Script" uid="uid://cab6ibnndcwp1" path="res://scripts/world/move_object_cuve.gd" id="6_tqs6q"]
 [ext_resource type="PackedScene" uid="uid://dfjgucwhhhaqj" path="res://scenes/props/random object spawners/posters-random-spawn.tscn" id="7_xclj3"]
 [ext_resource type="PackedScene" uid="uid://de2twosj4m0up" path="res://scenes/props/random object spawners/lamps-random-spwan.tscn" id="8_j5aib"]
@@ -45,10 +44,8 @@ size = Vector3(2, 4, 1)
 [node name="roomsmall-colonly2" parent="." instance=ExtResource("3_lr5w5")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
-[node name="roomsmall2" parent="." node_paths=PackedStringArray("source_mesh_instance") instance=ExtResource("4_snlo4")]
+[node name="roomsmall2" parent="." instance=ExtResource("4_snlo4")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-script = ExtResource("5_uw58q")
-source_mesh_instance = NodePath("roomsmall")
 
 [node name="TriggerArea" type="Area3D" parent="." groups=["music_areas"]]
 script = ExtResource("5_chxuo")
@@ -97,6 +94,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, -5)
 [node name="Lamps-random-spwan" parent="." instance=ExtResource("8_j5aib")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.26341, 0)
 
-[editable path="roomsmall2"]
 [editable path="Posters-random-spawn"]
 [editable path="Posters-random-spawn2"]

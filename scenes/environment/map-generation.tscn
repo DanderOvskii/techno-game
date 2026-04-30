@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://jmsspt1kqsuq" path="res://addons/SimpleDungeons/DungeonGenerator3D.gd" id="1_yt1jo"]
 [ext_resource type="PackedScene" uid="uid://cn02hrwpikkip" path="res://prefabs/environment/rooms_with_coll/roomsmall_room.tscn" id="2_cw4ka"]
-[ext_resource type="PackedScene" uid="uid://by33c3t2uqkc5" path="res://prefabs/environment/rooms_weith_shuindak/stair_room.tscn" id="3_1llmv"]
-[ext_resource type="PackedScene" uid="uid://b7cvrqeul83rn" path="res://prefabs/environment/rooms_weith_shuindak/corridor_room.tscn" id="4_frqnq"]
+[ext_resource type="PackedScene" uid="uid://by33c3t2uqkc5" path="res://prefabs/environment/rooms_weith_shuindak/stair_room-schuin.tscn" id="3_1llmv"]
+[ext_resource type="PackedScene" uid="uid://b7cvrqeul83rn" path="res://prefabs/environment/rooms_weith_shuindak/corridor_room-schuin.tscn" id="4_frqnq"]
 [ext_resource type="PackedScene" uid="uid://bmqt801h5p3nj" path="res://prefabs/environment/rooms_with_coll/startSmall_room.tscn" id="6_cqat8"]
 
 [node name="map-generation" type="Node3D"]

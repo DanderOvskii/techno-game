@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://b7cvrqeul83rn"]
 
 [ext_resource type="Script" uid="uid://c18dc0obh7a3j" path="res://addons/SimpleDungeons/corridor_replace_Room.gd" id="1_2gdvh"]
-[ext_resource type="PackedScene" uid="uid://doikcx1axksa7" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-strait.tscn" id="2_hm74t"]
-[ext_resource type="PackedScene" uid="uid://ciftdm2p0wvki" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-corner.tscn" id="3_pqxc3"]
-[ext_resource type="PackedScene" uid="uid://wurmi8k7tup2" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-T.tscn" id="4_lu4m1"]
+[ext_resource type="PackedScene" uid="uid://doikcx1axksa7" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-strait-schuin.tscn" id="2_hm74t"]
+[ext_resource type="PackedScene" uid="uid://ciftdm2p0wvki" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-corner-schuin.tscn" id="3_pqxc3"]
+[ext_resource type="PackedScene" uid="uid://wurmi8k7tup2" path="res://prefabs/environment/rooms_weith_shuindak/halway-replacments/halway-T-schuin.tscn" id="4_lu4m1"]
 [ext_resource type="Texture2D" uid="uid://dqvyc0ok7chld" path="res://addons/SimpleDungeons/sample_assets/kenney-grey-checkerboard-cc0.png" id="5_rrtq0"]
 [ext_resource type="PackedScene" uid="uid://d1y1yiamudepd" path="res://assets/models/environment/maptiles-schuindak/CorridorShuin.glb" id="6_n3jpw"]
 

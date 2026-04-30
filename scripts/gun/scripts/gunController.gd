@@ -95,24 +95,14 @@ func _preform_hitscan():
             print("Hit blocked by geometry (curved path check failed)")
 
 
-func _world_to_physics_pos(visual_pos: Vector3) -> Vector3:
-    # Reverse the shader's curvature to get the real physics position
-    # var diff = visual_pos.xz - camera_node.global_position.xz  # Vector2
-    # Wait — xz gives a Vector2 implicitly in some contexts, so be explicit:
-    var diff2 = Vector2(visual_pos.x - camera_node.global_position.x,
-                        visual_pos.z - camera_node.global_position.z)
-    var dist = diff2.length()
-    var y_offset = dist * dist * curvature_strength
-    return Vector3(visual_pos.x, visual_pos.y - y_offset, visual_pos.z)
-
 
 func _is_target_reachable_curved(target_visual_pos: Vector3, steps: int = 100) -> bool:
-    var from_visual = camera_node.global_position  # Camera isn't curved
+    var from_visual = GlobalVars.camera_position  # Camera isn't curved
     var forward = -camera_node.global_transform.basis.z
 
     # We march from the camera toward the visual hit point in steps
     var total_dist = from_visual.distance_to(target_visual_pos)
-    var prev_physics = _world_to_physics_pos(from_visual)
+    var prev_physics = GlobalFuncs.unapply_world_curvature(from_visual)
 
     var space_state = camera_node.get_world_3d().direct_space_state
     debug_mesh.clear_surfaces()
@@ -127,7 +117,7 @@ func _is_target_reachable_curved(target_visual_pos: Vector3, steps: int = 100) -
 
         # Linear interpolation in visual space along the shot direction
         var visual_point = from_visual + forward * (total_dist * t)
-        var physics_point = _world_to_physics_pos(visual_point)
+        var physics_point = GlobalFuncs.unapply_world_curvature(visual_point)
 
         # Cast a short segment between the two physics positions
         var query = PhysicsRayQueryParameters3D.create(prev_physics, physics_point)

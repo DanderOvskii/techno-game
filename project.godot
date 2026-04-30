@@ -23,6 +23,7 @@ MusicManager="*res://scripts/music_mashine/music_manager.gd"
 PatternManager="*res://scripts/music_mashine/pattern_manager.gd"
 GameSettings="*res://GameSettings.gd"
 GameManager="*res://game_manager.gd"
+GlobalFuncs="*res://scripts/systems/global_funcs.gd"
 
 [editor_plugins]
 
