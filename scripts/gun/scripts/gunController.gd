@@ -97,7 +97,7 @@ func _preform_hitscan():
 
 
 func _is_target_reachable_curved(target_visual_pos: Vector3, steps: int = 100) -> bool:
-    var from_visual = GlobalVars.camera_position  # Camera isn't curved
+    var from_visual = camera_node.global_position
     var forward = -camera_node.global_transform.basis.z
 
     # We march from the camera toward the visual hit point in steps

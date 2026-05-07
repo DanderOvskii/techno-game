@@ -2,7 +2,6 @@
 # and apply the global curvature strength to them, 
 # also update the camera position in the shader every frame
 
-@tool
 extends Camera3D  
 
 @export var woldcurf_shader_path: String = "res://shaders/worldcurf_shader.shader"	
