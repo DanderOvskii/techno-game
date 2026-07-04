@@ -1,0 +1,6 @@
+{
+    "chat.mcp.apps.enabled": false,
+    "inlineChat.askInChat": false,
+    "inlineChat.fixDiagnostics": false,
+    "chat.disableAIFeatures": true
+}

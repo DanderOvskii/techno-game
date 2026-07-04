@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://drmyfq56h4k1f"]
+
+[ext_resource type="Script" uid="uid://cdwth4t7xt3xx" path="res://scripts/testing/enemy_died.gd" id="1_vsbdi"]
+[ext_resource type="Script" uid="uid://crui41i3eapw7" path="res://scripts/core/health_component.gd" id="2_vqoup"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fmsva"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h6vba"]
+
+[node name="Testbox" type="Node3D"]
+script = ExtResource("1_vsbdi")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_fmsva")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("BoxMesh_h6vba")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_vqoup")
+metadata/_custom_type_script = "uid://crui41i3eapw7"
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

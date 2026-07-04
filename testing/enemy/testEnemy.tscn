@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8trktg7eimdf"]
+[gd_scene load_steps=7 format=3 uid="uid://c8trktg7eimdf"]
 
 [ext_resource type="Texture2D" uid="uid://bpcnm21umur4e" path="res://testing/enemy/unnamed.png" id="1_rdi0b"]
+[ext_resource type="Script" uid="uid://cdwth4t7xt3xx" path="res://scripts/testing/enemy_died.gd" id="1_yl8hv"]
 [ext_resource type="Script" uid="uid://cab6ibnndcwp1" path="res://scripts/world/move_object_cuve.gd" id="2_nv02o"]
+[ext_resource type="Script" uid="uid://crui41i3eapw7" path="res://scripts/core/health_component.gd" id="4_y52of"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rdi0b"]
 size = Vector3(1.5, 1.5, 0.121)
@@ -10,6 +12,7 @@ size = Vector3(1.5, 1.5, 0.121)
 size = Vector3(1.5, 1.5, 0.121)
 
 [node name="TestEnemy" type="Node3D" groups=["enemy"]]
+script = ExtResource("1_yl8hv")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
@@ -27,3 +30,9 @@ shape = SubResource("BoxShape3D_nv02o")
 [node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/enemyghostHitbox"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 texture = ExtResource("1_rdi0b")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_y52of")
+metadata/_custom_type_script = "uid://crui41i3eapw7"
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
